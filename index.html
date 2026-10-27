@@ -20,7 +20,8 @@
     body { background: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; min-height: 100vh; }
     main { width: 100%; max-width: 680px; }
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .brand { font-size: 1.25rem; font-weight: 700; }
+    .brand { font-size: 1.25rem; font-weight: 700; cursor: pointer; user-select: none; transition: opacity 0.2s; }
+    .brand:hover { opacity: 0.85; }
     .brand span { color: var(--primary); }
     .badge { background: #1e293b; color: #94a3b8; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; border: 1px solid var(--border); }
     .hero { margin-bottom: 24px; }
@@ -45,7 +46,7 @@
 <body>
 <main>
   <header>
-    <div class="brand">✦ AI <span>Study Pro</span></div>
+    <div id="brand-logo" class="brand" title="Gå tillbaka till startsidan">✦ AI <span>Study Pro</span></div>
     <div class="badge">IT-infrastruktur</div>
   </header>
 
@@ -649,6 +650,14 @@
 
   const $ = id => document.getElementById(id);
 
+  function resetToHome() {
+    $('quiz-card').classList.add('hidden');
+    $('result-card').classList.add('hidden');
+    $('setup-card').classList.remove('hidden');
+  }
+
+  $('brand-logo').onclick = resetToHome;
+
   $('start-btn').onclick = () => {
     const requestedCount = parseInt($('count').value, 10);
 
@@ -713,10 +722,7 @@
     }
   };
 
-  $('restart-btn').onclick = () => {
-    $('result-card').classList.add('hidden');
-    $('setup-card').classList.remove('hidden');
-  };
+  $('restart-btn').onclick = resetToHome;
 </script>
 </body>
 </html>
