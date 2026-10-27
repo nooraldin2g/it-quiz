@@ -46,12 +46,12 @@
 <main>
   <header>
     <div class="brand">✦ AI <span>Study Pro</span></div>
-    <div class="badge">IT • TUC Kurs</div>
+    <div class="badge">IT • Utbildning</div>
   </header>
 
   <div class="hero">
     <h1>Lär dig smartare.</h1>
-    <p>Träna IT-infrastruktur och säkerhet med automatisk rättning och tydliga förklaringar.</p>
+    <p>Träna IT-infrastruktur och nätverk med automatisk rättning och tydliga förklaringar.</p>
   </div>
 
   <div id="setup-card" class="card">
@@ -60,7 +60,7 @@
     <select id="topic">
       <option value="all">Alla ämnen (Blandat - 50 frågor)</option>
       <option value="infra">Nätverk & Nätverksinfrastruktur</option>
-      <option value="sec">IT-infrastruktur & Säkerhet (TUC Kursplan)</option>
+      <option value="sec">IT-infrastruktur</option>
     </select>
 
     <label>Antal frågor</label>
@@ -272,183 +272,182 @@
     },
 
     // =========================================================================
-    // GRUPP 2: IT-INFRASTRUKTUR & SÄKERHET - TUC KURSPLAN (25 frågor)
-    // Moment: Virtualisering, IBM Historia, Servrar, Backup, Sårbarheter
+    // GRUPP 2: IT-INFRASTRUKTUR (25 frågor baserade på kursmomenten)
     // =========================================================================
     {
       topic: "sec",
-      q: "Vad innebär 'effektutvinning ur ett IT-system' enligt kursplanen?",
-      options: ["Att mäta systemets strömförbrukning i kilowatt", "Att optimera processer och utnyttjande så att IT-investeringen genererar maximal verksamhetsnytta", "Att överklocka processorerna i serverhallen", "Att öka nätverkskablarnas kapacitet"],
+      q: "Vad innebär 'effektutvinning ur ett IT-system[span_0](start_span)'[span_0](end_span)?",
+      options: ["Att mäta systemets strömförbrukning i kilowatt", "Att optimera processer och utnyttjande så att IT-investeringen genererar maximal verksamhetsnytta[span_1](start_span)[span_1](end_span)", "Att överklocka processorerna i serverhallen", "Att öka nätverkskablarnas kapacitet"],
       answer: 1,
-      exp: "Effektutvinning handlar om att organisera och nyttja IT-systemet optimalt så att det realiserar avsedd nytta och värde för verksamheten."
+      exp: "Effektutvinning handlar om att organisera och nyttja IT-systemet optimalt så att det realiserar avsedd nytta och värde för verksamheten[span_2](start_span)[span_2](end_span)."
     },
     {
       topic: "sec",
-      q: "Vilken historisk roll spelade IBM 7044 och dess varianter för IT-arkitektur och säkerhet?",
-      options: ["Det var världens första handhållna persondator", "Det var tidiga stordatorsystem som banade väg för multiprogrammering, batchbearbetning och tidig minnesisolering", "Det var det första trådlösa nätverket", "Det lanserade den första brandväggen"],
+      q: "Vilken historisk roll spelade IBM 7044 och dess varianter för IT-arkitektur och säkerhet[span_3](start_span)[span_3](end_span)?",
+      options: ["Det var världens första handhållna persondator", "Det var tidiga stordatorsystem som banade väg för multiprogrammering, batchbearbetning och tidig minnesisolering[span_4](start_span)[span_4](end_span)", "Det var det första trådlösa nätverket", "Det lanserade den första brandväggen"],
       answer: 1,
-      exp: "IBM 7044 (och 7044M) var centrala stordatorsystem på 1960-talet som utvecklade arkitekturen för simultana jobb och minnesskydd mellan processer."
+      exp: "IBM 7044 (och 7044M) var centrala stordatorsystem på 1960-talet som utvecklade arkitekturen för simultana jobb och minnesskydd mellan processer[span_5](start_span)[span_5](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad kännetecknar IBM System p och dess PowerVM-teknik inom virtualisering?",
+      q: "Vad kännetecknar IBM System p och dess PowerVM-teknik inom virtualisering[span_6](start_span)[span_6](end_span)?",
       options: ["Konsumentmjukvara för Windows-appar", "Hårdvarunära logisk partitionering (LPAR) med hög tillgänglighet och mikrosegmentering av processorer", "Ett antivirusprogram för Linux", "Ett backup-skript för bandstationer"],
       answer: 1,
-      exp: "IBM System p (Power Systems) använder PowerVM för LPAR, vilket möjliggör dedikerad eller delad hårdvarupartitionering med extremt hög tillförlitlighet."
+      exp: "IBM System p (Power Systems) använder PowerVM för LPAR, vilket möjliggör dedikerad eller delad hårdvarupartitionering med extremt hög tillförlitlighet[span_7](start_span)[span_7](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är skillnaden mellan en Typ 1 (Bare-metal) och Typ 2 (Hosted) hypervisor?",
+      q: "Vad är skillnaden mellan en Typ 1 (Bare-metal) och Typ 2 (Hosted) hypervisor[span_8](start_span)[span_8](end_span)?",
       options: ["Typ 1 installeras direkt på hårdvaran, medan Typ 2 körs som en applikation ovanpå ett underliggande OS", "Typ 2 körs direkt på moderkortet och Typ 1 i molnet", "Typ 1 stödjer bara Windows medan Typ 2 stödjer Linux", "Det finns ingen skillnad i arkitektur"],
       answer: 0,
-      exp: "Typ 1 (t.ex. VMware ESXi, Proxmox) körs direkt mot hårdvaran för hög prestanda och säkerhet. Typ 2 (t.ex. VirtualBox) körs ovanpå ett värd-OS."
+      exp: "Typ 1 (t.ex. VMware ESXi, Proxmox) körs direkt mot hårdvaran för hög prestanda och säkerhet. Typ 2 (t.ex. VirtualBox) körs ovanpå ett värd-OS[span_9](start_span)[span_9](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'PC-virtualisering' i praktiken för en IT-säkerhetstekniker?",
-      options: ["Att ersätta alla datorer med surfplattor", "Att köra isolerade gästoperativsystem lokalt på en klientdator för tester, analys eller separation av miljöer", "Att bygga om datorns moderkort", "Att ansluta skärmen trådlöst"],
+      q: "Vad innebär 'PC-virtualisering' i praktiken för en IT-säkerhetstekniker[span_10](start_span)[span_10](end_span)?",
+      options: ["Att ersätta alla datorer med surfplattor", "Att köra isolerade gästoperativsystem lokalt på en klientdator för tester, analys eller separation av miljöer[span_11](start_span)[span_11](end_span)", "Att bygga om datorns moderkort", "Att ansluta skärmen trådlöst"],
       answer: 1,
-      exp: "PC-virtualisering gör att tekniker kan isolera testmiljöer, köra skadlig kod i sandlådor eller hantera flera miljöer säkert på en lokal maskin."
+      exp: "PC-virtualisering gör att tekniker kan isolera testmiljöer, köra skadlig kod i sandlådor eller hantera flera miljöer säkert på en lokal maskin[span_12](start_span)[span_12](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är det huvudsakliga målet med 'applikationsvirtualisering'?",
-      options: ["Att köra program i isolerade behållare utan att integrera eller skapa konflikter i underliggande OS", "Att öka datorns RAM-minne virtuellt", "Att kompilera om all kod till assembler", "Att installera program direkt i BIOS"],
+      q: "Vad är det huvudsakliga målet med 'applikationsvirtualisering[span_13](start_span)'[span_13](end_span)?",
+      options: ["Att köra program i isolerade behållare utan att integrera eller skapa konflikter i underliggande OS[span_14](start_span)[span_14](end_span)", "Att öka datorns RAM-minne virtuellt", "Att kompilera om all kod till assembler", "Att installera program direkt i BIOS"],
       answer: 0,
-      exp: "Applikationsvirtualisering (t.ex. App-V eller containers) paketerar en applikation med dess beroenden så att den körs oberoende av värdsystemet."
+      exp: "Applikationsvirtualisering (t.ex. App-V eller containers) paketerar en applikation med dess beroenden så att den körs oberoende av värdsystemet[span_15](start_span)[span_15](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'datavirtualisering' inom en modern IT-infrastruktur?",
-      options: ["Att säkerhetskopiera filer till optiska skivor", "Att integrera och ge åtkomst till data från flera källor i realtid utan att flytta den fysiskt", "Att simulera en hårddisk med papper", "Att kryptera e-postdatabaser"],
+      q: "Vad innebär 'datavirtualisering' inom en modern IT-infrastruktur[span_16](start_span)[span_16](end_span)?",
+      options: ["Att säkerhetskopiera filer till optiska skivor", "Att integrera och ge åtkomst till data från flera källor i realtid utan att flytta den fysiskt[span_17](start_span)[span_17](end_span)", "Att simulera en hårddisk med papper", "Att kryptera e-postdatabaser"],
       answer: 1,
-      exp: "Datavirtualisering låter system och användare läsa och hantera data från skilda databaser och lagringsplatser via ett enda virtuellt lager."
+      exp: "Datavirtualisering låter system och användare läsa och hantera data från skilda databaser och lagringsplatser via ett enda virtuellt lager[span_18](start_span)[span_18](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad kallas den allvarliga sårbarhet där kod i en virtuell maskin bryter sig ut och tar kontroll över hypervisorn?",
+      q: "Vad kallas den allvarliga sårbarhet där kod i en virtuell maskin bryter sig ut och tar kontroll över hypervisorn[span_19](start_span)[span_19](end_span)?",
       options: ["Buffer Overflow", "Hypervisor Escape (VM Escape)", "SQL Injection", "ARP Poisoning"],
       answer: 1,
-      exp: "Hypervisor Escape (VM Escape) är ett kritiskt säkerhetshål där en angripare tar sig förbi isoleringen och når värdsystemet."
+      exp: "Hypervisor Escape (VM Escape) är ett kritiskt säkerhetshål där en angripare tar sig förbi isoleringen och når värdsystemet[span_20](start_span)[span_20](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'Hög tillgänglighet' (High Availability / HA) i en serverplattform?",
-      options: ["Att servern alltid svarar på 'ping'", "Systemdesign med redundans och automatisk redundansväxling (failover) för att minimera driftavbrott", "Att vem som helst har behörighet att logga in", "Att bandbredden är obegränsad"],
+      q: "Vad innebär 'Hög tillgänglighet' (High Availability / HA) i en serverplattform[span_21](start_span)[span_21](end_span)?",
+      options: ["Att servern alltid svarar på 'ping'", "Systemdesign med redundans och automatisk redundansväxling (failover) för att minimera driftavbrott[span_22](start_span)[span_22](end_span)", "Att vem som helst har behörighet att logga in", "Att bandbredden är obegränsad"],
       answer: 1,
-      exp: "High Availability minimerar nertid genom feltoleranta komponenter, redundanta nät/strömförsörjning och klusterhantering."
+      exp: "High Availability minimerar nertid genom feltoleranta komponenter, redundanta nät/strömförsörjning och klusterhantering[span_23](start_span)[span_23](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär den klassiska backup-strategin '3-2-1-regeln'?",
-      options: ["3 timmar svarstid, 2 tekniker, 1 reservserver", "3 kopior av data, på minst 2 olika medietyper, varav minst 1 lagrad off-site", "3 servrar, 2 brandväggar, 1 router", "3 lösenord, 2 användare, 1 administratör"],
+      q: "Vad innebär den klassiska backup-strategin '3-2-1-regeln[span_24](start_span)'[span_24](end_span)?",
+      options: ["3 timmar svarstid, 2 tekniker, 1 reservserver", "3 kopior av data, på minst 2 olika medietyper, varav minst 1 lagrad off-site[span_25](start_span)[span_25](end_span)", "3 servrar, 2 brandväggar, 1 router", "3 lösenord, 2 användare, 1 administratör"],
       answer: 1,
-      exp: "3-2-1-regeln stipulerar: Tre kopior av viktig data, sparat på minst två olika medier, och en kopia på en annan fysisk/geografisk plats (eller molnet)."
+      exp: "3-2-1-regeln stipulerar: Tre kopior av viktig data, sparat på minst två olika medier, och en kopia på en annan fysisk/geografisk plats[span_26](start_span)[span_26](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad definierar begreppet RPO (Recovery Point Objective) vid haveriberedskap och backup?",
-      options: ["Den maximalt acceptabla tidsförlusten av data mätt bakåt i tiden från kraschen", "Den tid det tar att starta om servern", "Kostnaden för ny hårdvara", "Antalet tekniker som kallas in"],
+      q: "Vad definierar begreppet RPO (Recovery Point Objective) vid haveriberedskap och backup[span_27](start_span)[span_27](end_span)?",
+      options: ["Den maximalt acceptabla tidsförlusten av data mätt bakåt i tiden från kraschen[span_28](start_span)[span_28](end_span)", "Den tid det tar att starta om servern", "Kostnaden för ny hårdvara", "Antalet tekniker som kallas in"],
       answer: 0,
-      exp: "RPO anger hur mycket data i tid verksamheten har råd att förlora (t.ex. max 1 timmes dataförlust om backup tas varje timme)."
+      exp: "RPO anger hur mycket data i tid verksamheten har råd att förlora (t.ex. max 1 timmes dataförlust om backup tas varje timme)[span_29](start_span)[span_29](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad definierar begreppet RTO (Recovery Time Objective)?",
-      options: ["Den maximala tid det får ta att återställa ett system till fungerande drift efter ett avbrott", "Hur länge en hårddisk håller", "Hur ofta backupfiler krypteras", "Tiden det tar att göra en full installation"],
+      q: "Vad definierar begreppet RTO (Recovery Time Objective)[span_30](start_span)[span_30](end_span)?",
+      options: ["Den maximala tid det får ta att återställa ett system till fungerande drift efter ett avbrott[span_31](start_span)[span_31](end_span)", "Hur länge en hårddisk håller", "Hur ofta backupfiler krypteras", "Tiden det tar att göra en full installation"],
       answer: 0,
-      exp: "RTO anger hur lång tid ett driftstopp maximalt får pågå innan systemet måste vara i produktion igen."
+      exp: "RTO anger hur lång tid ett driftstopp maximalt får pågå innan systemet måste vara i produktion igen[span_32](start_span)[span_32](end_span)."
     },
     {
       topic: "sec",
-      q: "Hur bidrar 'överallokering' (overcommitment) av resurser (CPU/RAM) till en sårbarhet i virtualisering?",
-      options: ["Det raderar hypervisorns certifikat", "Det kan leda till DoS (Denial of Service) och resursutmattning för alla gäster om en maskin överbelastas", "Det öppnar brandväggsportar automatiskt", "Det slår ut switcharnas MAC-tabell"],
+      q: "Hur bidrar 'överallokering' (overcommitment) av resurser (CPU/RAM) till en sårbarhet i virtualisering[span_33](start_span)[span_33](end_span)?",
+      options: ["Det raderar hypervisorns certifikat", "Det kan leda till DoS (Denial of Service) och resursutmattning för alla gäster om en maskin överbelastas[span_34](start_span)[span_34](end_span)", "Det öppnar brandväggsportar automatiskt", "Det slår ut switcharnas MAC-tabell"],
       answer: 1,
-      exp: "Om virtuella resurser överbokas kraftigt riskerar en angripare eller process att svälta ut hypervisorns fysiska minne och CPU (resource exhaustion)."
+      exp: "Om virtuella resurser överbokas kraftigt riskerar en angripare eller process att svälta ut hypervisorns fysiska minne och CPU (resource exhaustion)[span_35](start_span)[span_35](end_span)."
     },
     {
       topic: "sec",
-      q: "Vilken princip är viktigast vid fördelning av datorns resurser till flera simultana tillämpningar?",
-      options: ["Att ge högsta prioritet till grafikkortet", "Resursisolering och kvoter för att säkerställa att ingen enskild process sänker de andra", "Att alltid dela ut 100% av RAM-minnet till första processen", "Att stänga av schemaläggaren i kärnan"],
+      q: "Vilken princip är viktigast vid fördelning av datorns resurser till flera simultana tillämpningar[span_36](start_span)[span_36](end_span)?",
+      options: ["Att ge högsta prioritet till grafikkortet", "Resursisolering och kvoter för att säkerställa att ingen enskild process sänker de andra[span_37](start_span)[span_37](end_span)", "Att alltid dela ut 100% av RAM-minnet till första processen", "Att stänga av schemaläggaren i kärnan"],
       answer: 1,
-      exp: "Genom cgroups, kvoter och prioritering isoleras processer så att systemet upprätthåller rätt kapacitet och tillgänglighet under samtidig drift."
+      exp: "Genom cgroups, kvoter och prioritering isoleras processer så att systemet upprätthåller rätt kapacitet och tillgänglighet under samtidig drift[span_38](start_span)[span_38](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är 'Immutable Backup' (oföränderlig säkerhetskopia) och varför är det kritiskt mot ransomware?",
-      options: ["Backupfiler som raderas direkt efter skapande", "Säkerhetskopior som skrivskyddas med Write-Once-Read-Many (WORM) så att de inte kan krypteras eller raderas", "Backuper som sparas utan lösenord", "Säkerhetskopior som skapas med öppen källkod"],
+      q: "Vad är 'Immutable Backup' (oföränderlig säkerhetskopia) och varför är det kritiskt mot ransomware[span_39](start_span)[span_39](end_span)?",
+      options: ["Backupfiler som raderas direkt efter skapande", "Säkerhetskopior som skrivskyddas med Write-Once-Read-Many (WORM) så att de inte kan krypteras eller raderas[span_40](start_span)[span_40](end_span)", "Backuper som sparas utan lösenord", "Säkerhetskopior som skapas med öppen källkod"],
       answer: 1,
-      exp: "Oföränderliga backuper kan varken modifieras eller raderas under en förutbestämd tid, vilket hindrar utpressningsvirus från att sabotera återställningsdata."
+      exp: "Oföränderliga backuper kan varken modifieras eller raderas under en förutbestämd tid, vilket hindrar utpressningsvirus från att sabotera återställningsdata[span_41](start_span)[span_41](end_span)."
     },
     {
       topic: "sec",
-      q: "Vilket serveroperativsystem dominerar idag storskalig virtualisering och molninfrastruktur tack vare KVM?",
-      options: ["MS-DOS", "Linux (med KVM-kärnmodul)", "macOS Server", "Windows 98"],
+      q: "Vilket serveroperativsystem dominerar idag storskalig virtualisering och molninfrastruktur tack vare KVM[span_42](start_span)[span_42](end_span)?",
+      options: ["MS-DOS", "Linux (med KVM-kärnmodul)[span_43](start_span)[span_43](end_span)", "macOS Server", "Windows 98"],
       answer: 1,
-      exp: "Linux med KVM (Kernel-based Virtual Machine) förvandlar Linux-kärnan till en kraftfull Typ 1-hypervisor."
+      exp: "Linux med KVM (Kernel-based Virtual Machine) förvandlar Linux-kärnan till en kraftfull Typ 1-hypervisor[span_44](start_span)[span_44](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'live migration' (t.ex. VMware vMotion) i en virtuell serverinfrastruktur?",
-      options: ["Att flytta en igångvarande virtuell maskin mellan två fysiska värdar utan driftavbrott", "Att säkerhetskopiera till molnet via FTP", "Att uppgradera RAM utan att öppna chassit", "Att stänga av alla servrar samtidigt"],
+      q: "Vad innebär 'live migration' (t.ex. VMware vMotion) i en virtuell serverinfrastruktur[span_45](start_span)[span_45](end_span)?",
+      options: ["Att flytta en igångvarande virtuell maskin mellan två fysiska värdar utan driftavbrott[span_46](start_span)[span_46](end_span)", "Att säkerhetskopiera till molnet via FTP", "Att uppgradera RAM utan att öppna chassit", "Att stänga av alla servrar samtidigt"],
       answer: 0,
-      exp: "Live migration flyttar det aktiva minnestillståndet och exekveringen av en virtuell maskin till en annan servernod utan att användarna tappar kontakten."
+      exp: "Live migration flyttar det aktiva minnestillståndet och exekveringen av en virtuell maskin till en annan servernod utan att användarna tappar kontakten[span_47](start_span)[span_47](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är ett 'Snapshot' i en virtualiseringsplattform, och varför ersätter det INTE en backup?",
-      options: ["Ett fotografi av serverchassit", "Ett tillfälligt tillstånd av disk och minne som är beroende av originaldisken och försämrar prestanda över tid", "En krypteringsmetod för brandväggar", "En hårdvarukontrollant"],
+      q: "Vad är ett 'Snapshot' i en virtualiseringsplattform, och varför ersätter det INTE en backup[span_48](start_span)[span_48](end_span)?",
+      options: ["Ett fotografi av serverchassit", "Ett tillfälligt tillstånd av disk och minne som är beroende av originaldisken och försämrar prestanda över tid[span_49](start_span)[span_49](end_span)", "En krypteringsmetod för brandväggar", "En hårdvarukontrollant"],
       answer: 1,
-      exp: "Snapshots är diff-filer beroende av baskopian; om den underliggande virtuella disken korrumperas eller raderas förloras även ögonblicksbilderna."
+      exp: "Snapshots är diff-filer beroende av baskopian; om den underliggande virtuella disken korrumperas eller raderas förloras även ögonblicksbilderna[span_50](start_span)[span_50](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är 'VM Sprawl' och vilken säkerhetsrisk medför det?",
-      options: ["Att virtuella maskiner sprids okontrollerat och glöms bort utan patchning och övervakning", "Att fysiska servrar blir för varma", "Att skärmupplösningen ändras automatiskt", "Att nätverkskabeln lossnar"],
+      q: "Vad är 'VM Sprawl' och vilken säkerhetsrisk medför det[span_51](start_span)[span_51](end_span)?",
+      options: ["Att virtuella maskiner sprids okontrollerat och glöms bort utan patchning och övervakning[span_52](start_span)[span_52](end_span)", "Att fysiska servrar blir för varma", "Att skärmupplösningen ändras automatiskt", "Att nätverkskabeln lossnar"],
       answer: 0,
-      exp: "VM Sprawl uppstår när virtuella servrar skapas enkelt men inte avvecklas eller underhålls, vilket ger sårbara och opatchade mål i nätet."
+      exp: "VM Sprawl uppstår när virtuella servrar skapas enkelt men inte avvecklas eller underhålls, vilket ger sårbara och opatchade mål i nätet[span_53](start_span)[span_53](end_span)."
     },
     {
       topic: "sec",
-      q: "Vilken säkerhetsfunktion i moderna CPU:er krävs för hårdvaruassisterad virtualisering (Intel VT-x / AMD-V)?",
+      q: "Vilken säkerhetsfunktion i moderna CPU:er krävs för hårdvaruassisterad virtualisering (Intel VT-x / AMD-V)[span_54](start_span)[span_54](end_span)?",
       options: ["Ring -1 eller Root Mode som separerar gästens privilegier från hypervisorns kontroll", "Dubbel klockfrekvens", "Inbyggd brandvägg i L2-cachen", "Mekanisk låsning av processorluckan"],
       answer: 0,
-      exp: "Intel VT-x och AMD-V introducerar hårdvarustöd (Root och Non-Root operations) så att hypervisorn kan köra gäster säkert och med full isolering."
+      exp: "Intel VT-x och AMD-V introducerar hårdvarustöd (Root och Non-Root operations) så att hypervisorn kan köra gäster säkert och med full isolering[span_55](start_span)[span_55](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'Thin Provisioning' vid tilldelning av lagringskapacitet till virtuella maskiner?",
-      options: ["Att diskyta allokeras dynamiskt i takt med att data faktiskt skrivs", "Att hårddisken fysiskt görs tunnare", "Att disken raderas varje natt", "Att all disk tilldelas och låses omedelbart vid start"],
+      q: "Vad innebär 'Thin Provisioning' vid tilldelning av lagringskapacitet till virtuella maskiner[span_56](start_span)[span_56](end_span)?",
+      options: ["Att diskyta allokeras dynamiskt i takt med att data faktiskt skrivs[span_57](start_span)[span_57](end_span)", "Att hårddisken fysiskt görs tunnare", "Att disken raderas varje natt", "Att all disk tilldelas och låses omedelbart vid start"],
       answer: 0,
-      exp: "Thin Provisioning sparar lagring genom att endast använda det fysiska utrymme som gästoperativsystemet faktiskt fyller med data."
+      exp: "Thin Provisioning sparar lagring genom att endast använda det fysiska utrymme som gästoperativsystemet faktiskt fyller med data[span_58](start_span)[span_58](end_span)."
     },
     {
       topic: "sec",
-      q: "Vilket säkerhetshot uppstår om virtuella maskiner i olika säkerhetszoner delar samma virtuella switch (vSwitch) utan korrekt VLAN-taggning?",
-      options: ["VLAN Hopping och oavsiktligt trafikläckage mellan isolerade nätverk", "Servern stänger av sig omedelbart", "CPU-fläkten stannar", "Datakablarna brinner upp"],
+      q: "Vilket säkerhetshot uppstår om virtuella maskiner i olika säkerhetszoner delar samma virtuella switch (vSwitch) utan korrekt VLAN-taggning[span_59](start_span)[span_59](end_span)?",
+      options: ["VLAN Hopping och oavsiktligt trafikläckage mellan isolerade nätverk[span_60](start_span)[span_60](end_span)", "Servern stänger av sig omedelbart", "CPU-fläkten stannar", "Datakablarna brinner upp"],
       answer: 0,
-      exp: "Felaktigt konfigurerade virtuella switchar kan leda till att paket läcker mellan otillåtna zoner eller att en gäst kan utföra VLAN Hopping."
+      exp: "Felaktigt konfigurerade virtuella switchar kan leda till att paket läcker mellan otillåtna zoner eller att en gäst kan utföra VLAN Hopping[span_61](start_span)[span_61](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär 'Side-Channel Attacks' (som t.ex. Spectre och Meltdown) i virtualiserade miljöer?",
-      options: ["Att en angripare bryter upp serverhallens sidodörr", "Att en virtuell maskin kan läsa data från hypervisorn eller andra gäster genom att analysera delad hårdvarucache och spekulativ exekvering", "Att man manipulerar nätverksswitchens portar", "Att man skickar massiv spam via e-post"],
+      q: "Vad innebär 'Side-Channel Attacks' (som t.ex. Spectre och Meltdown) i virtualiserade miljöer[span_62](start_span)[span_62](end_span)?",
+      options: ["Att en angripare bryter upp serverhallens sidodörr", "Att en virtuell maskin kan läsa data från hypervisorn eller andra gäster genom att analysera delad hårdvarucache och spekulativ exekvering[span_63](start_span)[span_63](end_span)", "Att man manipulerar nätverksswitchens portar", "Att man skickar massiv spam via e-post"],
       answer: 1,
-      exp: "Dessa hårdvarusårbarheter utnyttjar delade processorkomponenter för att läcka hemligheter (som krypteringsnycklar) mellan virtuella miljöer."
+      exp: "Dessa hårdvarusårbarheter utnyttjar delade processorkomponenter för att läcka hemligheter (som krypteringsnycklar) mellan virtuella miljöer[span_64](start_span)[span_64](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad är syftet med 'Clustering' och delad lagring (SAN/NAS) i en modern serverinfrastruktur?",
-      options: ["Att eliminera 'Single Point of Failure' och tillåta omedelbar redundans om en servernod havererar", "Att minska elkostnaden till noll", "Att undvika behovet av lösenord", "Att göra hårddiskarna analoga"],
+      q: "Vad är syftet med 'Clustering' och delad lagring (SAN/NAS) i en modern serverinfrastruktur[span_65](start_span)[span_65](end_span)?",
+      options: ["Att eliminera 'Single Point of Failure' och tillåta omedelbar redundans om en servernod havererar[span_66](start_span)[span_66](end_span)", "Att minska elkostnaden till noll", "Att undvika behovet av lösenord", "Att göra hårddiskarna analoga"],
       answer: 0,
-      exp: "Serverkluster med delad lagring ser till att om en hårdvarunod kraschar startas maskinerna automatiskt upp på en annan nod i klustret."
+      exp: "Serverkluster med delad lagring ser till att om en hårdvarunod kraschar startas maskinerna automatiskt upp på en annan nod i klustret[span_67](start_span)[span_67](end_span)."
     },
     {
       topic: "sec",
-      q: "Vad innebär principen 'Infrastructure as Code' (IaC) ur ett säkerhetsperspektiv?",
-      options: ["Att serverinfrastruktur definieras och versionshanteras i kodfiler, vilket ger repeterbara, granskningsbara och säkra driftsättningar", "Att IT-tekniker skriver hårdvaruritningar för hand", "Att servern endast kan konfigureras via BIOS", "Att kryptera all datakällkod"],
+      q: "Vad innebär principen 'Infrastructure as Code' (IaC) ur ett säkerhetsperspektiv[span_68](start_span)[span_68](end_span)?",
+      options: ["Att serverinfrastruktur definieras och versionshanteras i kodfiler, vilket ger repeterbara, granskningsbara och säkra driftsättningar[span_69](start_span)[span_69](end_span)", "Att IT-tekniker skriver hårdvaruritningar för hand", "Att servern endast kan konfigureras via BIOS", "Att kryptera all datakällkod"],
       answer: 0,
-      exp: "IaC gör att servrar och nätverkskonfigurationer kan säkerhetsgranskas, automatiseras och snabbt återskapas felfritt vid haverier."
+      exp: "IaC gör att servrar och nätverkskonfigurationer kan säkerhetsgranskas, automatiseras och snabbt återskapas felfritt vid haverier[span_70](start_span)[span_70](end_span)."
     }
   ];
 
@@ -468,7 +467,6 @@
       pool = questionPool.filter(item => item.topic === selectedTopic);
     }
 
-    // Slumpa och välj det begärda antalet
     activeQuestions = [...pool].sort(() => 0.5 - Math.random()).slice(0, requestedCount);
     currentIndex = 0;
     score = 0;
