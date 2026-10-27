@@ -65,8 +65,11 @@
 
     <label>Antal frågor</label>
     <select id="count">
-      <option value="5">5</option>
       <option value="10" selected>10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+      <option value="50">50</option>
     </select>
 
     <button id="start-btn" class="btn-primary">Skapa quiz ➔</button>
@@ -89,75 +92,358 @@
 
 <script>
   const questionPool = [
+    // --- IT-INFRASTRUKTUR (25 frågor) ---
     {
       topic: "infra",
       q: "Vilket protokoll ansvarar för att automatiskt tilldela IP-adresser på ett lokalt nätverk?",
       options: ["DNS", "DHCP", "ARP", "BGP"],
       answer: 1,
-      exp: "DHCP (Dynamic Host Configuration Protocol) delar ut dynamiska IP-adresser automatiskt till enheter på nätverket."
+      exp: "DHCP (Dynamic Host Configuration Protocol) delar ut dynamiska IP-adresser till enheter på nätverket."
     },
     {
       topic: "infra",
       q: "Vilket skikt i OSI-modellen hanterar routning och logisk adressering (t.ex. IP)?",
       options: ["Skikt 2 (Datalänk)", "Skikt 3 (Nätverk)", "Skikt 4 (Transport)", "Skikt 7 (Applikation)"],
       answer: 1,
-      exp: "Skikt 3 (Nätverksskiktet) ansvarar för logisk adressering via IP och routning mellan nätverk."
+      exp: "Skikt 3 (Nätverksskiktet) ansvarar för logisk adressering via IP och routning mellan skilda nätverk."
     },
     {
       topic: "infra",
       q: "Vilket portnummer används som standard för okrypterad HTTP-trafik?",
       options: ["22", "53", "80", "443"],
       answer: 2,
-      exp: "Port 80 används för standard HTTP. HTTPS använder port 443 och SSH använder port 22."
+      exp: "Port 80 är standardporten för okrypterad HTTP-trafik."
     },
     {
       topic: "infra",
       q: "Vad gör en DNS-server på ett nätverk?",
-      options: ["Krypterar datapaket", "Översätter domännamn till IP-adresser", "Skyddar mot virus", "Begränsar bandbredd"],
+      options: ["Krypterar datapaket", "Översätter domännamn till IP-adresser", "Skyddar mot skadlig kod", "Hanterar DHCP-pooler"],
       answer: 1,
-      exp: "DNS (Domain Name System) fungerar som internetets telefonbok och mappar adresser som 'google.com' till dess IP."
+      exp: "DNS (Domain Name System) översätter läsbara domännamn (t.ex. example.com) till numeriska IP-adresser."
     },
     {
       topic: "infra",
-      q: "Vilket av följande protokoll garanterar att datapaket kommer fram i ordning (connection-oriented)?",
+      q: "Vilket protokoll garanterar att datapaket levereras i ordning och felfritt (connection-oriented)?",
       options: ["UDP", "ICMP", "TCP", "IGMP"],
       answer: 2,
-      exp: "TCP (Transmission Control Protocol) säkerställer pålitlig och sekvenserad överföring via handskakning och kvittens."
+      exp: "TCP (Transmission Control Protocol) säkerställer pålitlig och sekvenserad överföring genom kvittens."
     },
+    {
+      topic: "infra",
+      q: "Hur många bitar består en IPv4-adress av?",
+      options: ["16 bitar", "32 bitar", "64 bitar", "128 bitar"],
+      answer: 1,
+      exp: "En IPv4-adress är 32 bitar lång och skrivs med fyra decimala tal (oktetter), t.ex. 192.168.1.1."
+    },
+    {
+      topic: "infra",
+      q: "Hur många bitar består en IPv6-adress av?",
+      options: ["32 bitar", "64 bitar", "128 bitar", "256 bitar"],
+      answer: 2,
+      exp: "En IPv6-adress är 128 bitar lång och skrivs i hexadecimal form."
+    },
+    {
+      topic: "infra",
+      q: "Vilken typ av nätverksenhet arbetar huvudsakligen på OSI-skikt 2 (Datalänk)?",
+      options: ["Router", "Switch", "Brandvägg", "Repeater"],
+      answer: 1,
+      exp: "En nätverksswitch vidarebefordrar dataramar baserat på hårdvaruadresser (MAC-adresser) på skikt 2."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll används av kommandot 'ping' för att kontrollera nätverkskontakt?",
+      options: ["ICMP", "IGMP", "SNMP", "ARP"],
+      answer: 0,
+      exp: "ICMP (Internet Control Message Protocol) skickar Echo Request och svarar med Echo Reply vid ping."
+    },
+    {
+      topic: "infra",
+      q: "Vad kallas den fysiska hårdvaruadress som finns inbyggd i ett nätverkskort?",
+      options: ["IP-adress", "MAC-adress", "Subnätmask", "Gateway"],
+      answer: 1,
+      exp: "MAC-adressen (Media Access Control) är en unik 48-bitars identifierare för ett fysiskt nätverkskort."
+    },
+    {
+      topic: "infra",
+      q: "Vilken kontakt används som standard på partvinnad Ethernet-kabel (Cat5e/Cat6)?",
+      options: ["RJ11", "RJ45", "BNC", "SFP+"],
+      answer: 1,
+      exp: "RJ45 är standardkontakten med 8 ledare för Ethernet-kablar."
+    },
+    {
+      topic: "infra",
+      q: "Vad används en subnätmask till vid IP-konfiguration?",
+      options: ["Avgör vilken del som är nätverks-ID och värd-ID", "Krypterar anslutningen", "Döljer den externa IP-adressen", "Styr brandväggens regler"],
+      answer: 0,
+      exp: "Subnätmasken definierar gränsen mellan nätverksdelen och värddelen i en given IP-adress."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll översätter en känd IP-adress till dess fysiska MAC-adress på ett lokalt nät?",
+      options: ["ARP", "RARP", "NAT", "BGP"],
+      answer: 0,
+      exp: "ARP (Address Resolution Protocol) mappar en logisk IPv4-adress mot en fysisk MAC-adress."
+    },
+    {
+      topic: "infra",
+      q: "Vad är standardporten för HTTPS (krypterad webbtrafik)?",
+      options: ["80", "8080", "443", "8443"],
+      answer: 2,
+      exp: "Port 443 används för säker webbtrafik krypterad med TLS/SSL."
+    },
+    {
+      topic: "infra",
+      q: "Vilket transportprotokoll är snabbast och saknar kvittenser (connectionless)?",
+      options: ["TCP", "UDP", "SCTP", "FTP"],
+      answer: 1,
+      exp: "UDP (User Datagram Protocol) skickar data utan att vänta på bekräftelse, lämpligt för video och röstsamtal."
+    },
+    {
+      topic: "infra",
+      q: "Vad kallas nätverkstopologin där alla enheter är direkt anslutna till en central switch?",
+      options: ["Ringtopologi", "Bustopologi", "Stjärntopologi", "Mesh-topologi"],
+      answer: 2,
+      exp: "I en stjärntopologi kopplas varje nod individuellt till en central distributionspunkt som en switch."
+    },
+    {
+      topic: "infra",
+      q: "Vilket portnummer används som standard av DNS?",
+      options: ["21", "25", "53", "110"],
+      answer: 2,
+      exp: "DNS lyssnar normalt på port 53 (både UDP och TCP)."
+    },
+    {
+      topic: "infra",
+      q: "Vad står förkortningen 'VLAN' för?",
+      options: ["Virtual Local Area Network", "Variable Line Access Node", "Verified Link Authentication Network", "Virtual Link Access Network"],
+      answer: 0,
+      exp: "VLAN (Virtual Local Area Network) delar upp ett fysiskt nätverk i flera logiska och isolerade nätverk."
+    },
+    {
+      topic: "infra",
+      q: "Vad är den teoretiska maxlängden för en standard Cat6 TP-kabel för 1 Gbps/10 Gbps Ethernet?",
+      options: ["50 meter", "100 meter", "250 meter", "500 meter"],
+      answer: 1,
+      exp: "Maximal rekommenderad längd för partvinnad kopparkabel enligt Ethernet-standarden är 100 meter."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll används för att skicka e-post mellan servrar över internet?",
+      options: ["IMAP", "POP3", "SMTP", "SNMP"],
+      answer: 2,
+      exp: "SMTP (Simple Mail Transfer Protocol) används för utgående och vidarebefordrad e-post."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll används för övervakning och administration av nätverksenheter (t.ex. routrar och switchar)?",
+      options: ["SNMP", "NTP", "TFTP", "LDAP"],
+      answer: 0,
+      exp: "SNMP (Simple Network Management Protocol) samlar in statistik och larm från nätverksutrustning."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll synkroniserar klockan på servrar och nätverksenheter?",
+      options: ["PTP", "NTP", "STP", "LLDP"],
+      answer: 1,
+      exp: "NTP (Network Time Protocol) synkroniserar systemklockor mot referenstidskällor över nätverket."
+    },
+    {
+      topic: "infra",
+      q: "Vad är loopback-adressen i IPv4?",
+      options: ["192.168.0.1", "10.0.0.1", "127.0.0.1", "255.255.255.255"],
+      answer: 2,
+      exp: "127.0.0.1 (eller localhost) är standardadressen som refererar till den lokala enheten själv."
+    },
+    {
+      topic: "infra",
+      q: "Vilket protokoll används för att förhindra loopar i switchade nätverk på skikt 2?",
+      options: ["OSPF", "BGP", "STP (Spanning Tree Protocol)", "RIP"],
+      answer: 2,
+      exp: "STP (Spanning Tree Protocol) inaktiverar redundanta länkar för att undvika broadcast-stormar och switch-loopar."
+    },
+    {
+      topic: "infra",
+      q: "Vad innebär termen 'Default Gateway'?",
+      options: ["Den router enhetens paket skickas till om målet ligger utanför det lokala nätet", "Enhetens MAC-adress", "DNS-serverns reservadress", "Den första switchporten"],
+      answer: 0,
+      exp: "Default Gateway är routern som tar hand om trafik som ska vidare utanför det lokala delnätet."
+    },
+
+    // --- IT-SÄKERHET & INFRASTRUKTUR (25 frågor) ---
     {
       topic: "sec",
       q: "Vad kallas en cyberattack där flera datorer skickar massiv trafik mot en server för att sänka den?",
       options: ["Phishing", "DDoS", "SQL Injection", "Man-in-the-Middle"],
       answer: 1,
-      exp: "DDoS (Distributed Denial of Service) överbelastar en server genom floder av nätverkstrafik från många källor."
+      exp: "DDoS (Distributed Denial of Service) överbelastar servrar genom trafikflöden från flera enheter (botnet)."
     },
     {
       topic: "sec",
       q: "Vad är huvudsyftet med en brandvägg (Firewall)?",
-      options: ["Att öka internetets hastighet", "Att blockera och filtrera obehörig nätverkstrafik", "Att dela ut IP-adresser", "Att lagra backup"],
+      options: ["Öka överföringshastigheten", "Filtrera och kontrollera in- och utgående nätverkstrafik", "Tilldela IP-adresser", "Skapa virtuella diskar"],
       answer: 1,
-      exp: "En brandvägg övervakar inkommande och utgående nätverkstrafik och bestämmer vad som ska tillåtas utifrån regler."
+      exp: "En brandvägg övervakar trafikflöden och tillåter eller blockerar paket enligt uppsatta säkerhetsregler."
     },
     {
       topic: "sec",
-      q: "Vilket protokoll används för att etablera en säker, krypterad anslutning över ett öppet nätverk?",
+      q: "Vilket protokoll används för att etablera en säker, krypterad tunnel över ett öppet nätverk?",
       options: ["FTP", "Telnet", "VPN (t.ex. IPsec/WireGuard)", "SNMP"],
       answer: 2,
-      exp: "En VPN skapar en krypterad tunnel genom vilken trafik transporteras säkert över osäkra nätverk."
+      exp: "En VPN skapar en krypterad tunnel för att transportera känslig data säkert över öppna nätverk."
     },
     {
       topic: "sec",
       q: "Vad skiljer asymmetrisk kryptering från symmetrisk kryptering?",
-      options: ["Asymmetrisk använder två nycklar (offentlig och privat)", "Asymmetrisk använder inga nycklar alls", "Symmetrisk är omöjlig att knäcka", "Asymmetrisk används bara på lokala diskar"],
+      options: ["Asymmetrisk använder två nycklar (publik och privat)", "Asymmetrisk saknar nycklar helt", "Symmetrisk är omöjlig att knäcka", "Asymmetrisk fungerar bara lokalt"],
       answer: 0,
-      exp: "Asymmetrisk kryptering använder ett nyckelpar: en publik nyckel för kryptering och en privat nyckel för dekryptering."
+      exp: "Asymmetrisk kryptering använder två matematiskt kopplade nycklar: en offentlig för kryptering och en hemlig privat för dekryptering."
     },
     {
       topic: "sec",
       q: "Vad innebär termen 'NAT' (Network Address Translation)?",
-      options: ["Att översätta privata IP-adresser till en publik IP", "Att förhindra intrång", "Att kryptera e-post", "Att kontrollera kabelbrott"],
+      options: ["Översätter privata interna IP-adresser till en publik IP", "Blockerar skadliga skript", "Krypterar e-postmeddelanden", "Hanterar certifikat"],
       answer: 0,
-      exp: "NAT gör att många enheter i ett lokalt nätverk kan dela på en enda publik IP-adress ut mot internet."
+      exp: "NAT gör att många interna klienter i ett privat nätverk kan dela en och samma externa publika IP-adress."
+    },
+    {
+      topic: "sec",
+      q: "Vad kallas bedrägerier där angriparen lurar användare att lämna ut lösenord via falska mejl/sidor?",
+      options: ["Phishing (Nätfiske)", "Brute Force", "Ransomware", "Trojan"],
+      answer: 0,
+      exp: "Phishing utnyttjar manipulation för att få användare att frivilligt avslöja inloggningsuppgifter."
+    },
+    {
+      topic: "sec",
+      q: "Vilken typ av skadlig kod krypterar filer och kräver en lösensumma för att låsa upp dem?",
+      options: ["Adware", "Spyware", "Ransomware", "Rootkit"],
+      answer: 2,
+      exp: "Ransomware låser/krypterar användarens system och kräver betalning för att återställa informationen."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär flerfaktorsautentisering (MFA)?",
+      options: ["Lösenordet måste bytas varje månad", "Inloggningen kräver minst två oberoende verifieringsmetoder", "Databasen speglas till två servrar", "Trafiken krypteras två gånger"],
+      answer: 1,
+      exp: "MFA kräver minst två olika faktorer, t.ex. något du vet (lösenord) och något du har (engångskod i app)."
+    },
+    {
+      topic: "sec",
+      q: "Vilket säkert protokoll ersätter Telnet för fjärrstyrning via terminal över port 22?",
+      options: ["FTP", "SSH", "HTTP", "RDP"],
+      answer: 1,
+      exp: "SSH (Secure Shell) erbjuder stark kryptering för kommandoradssessioner till servrar."
+    },
+    {
+      topic: "sec",
+      q: "Vad är syftet med en DMZ (Demilitarized Zone) i ett företagsnätverk?",
+      options: ["Stänga av extern trafik helt", "Isolera externa servrar från det känsliga interna nätverket", "Lagra backupdata", "Öka bandbredden på fibernätet"],
+      answer: 1,
+      exp: "En DMZ placerar offentligt tillgängliga servrar i en separat zon så att ett intrång inte direkt når intranätet."
+    },
+    {
+      topic: "sec",
+      q: "Vad kallas en attack där en angripare i hemlighet avlyssnar eller manipulerar trafiken mellan två parter?",
+      options: ["Man-in-the-Middle (MitM)", "SQL Injection", "Cross-Site Scripting", "Zero-day"],
+      answer: 0,
+      exp: "I en Man-in-the-Middle-attack ställer sig angriparen osedd mellan sändare och mottagare."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär en 'Zero-day'-sårbarhet?",
+      options: ["En sårbarhet som har funnits i noll dagar", "En sårbarhet som är känd av angripare innan tillverkaren hunnit släppa en säkerhetsuppdatering", "Ett säkerhetshål utan skaderisk", "En bugg som raderar hårddisken direkt"],
+      answer: 1,
+      exp: "En Zero-day är en sårbarhet som utvecklaren har haft 'noll dagar' på sig att lappa innan den riskerar att utnyttjas."
+    },
+    {
+      topic: "sec",
+      q: "Vad kallas en attackmetod där programmet systematiskt testar tusentals lösenord tills rätt hittas?",
+      options: ["Social Engineering", "Brute Force-attack", "ARP Spoofing", "DNS Poisoning"],
+      answer: 1,
+      exp: "Brute Force innebär att man provar alla tänkbara kombinationer av tecken eller ordlistor tills man träffar rätt."
+    },
+    {
+      topic: "sec",
+      q: "Vilken typ av brandvägg kan inspektera innehållet i applikationslagret och identifiera känd skadlig kod (Layer 7)?",
+      options: ["Paketfiltrerande brandvägg", "Next-Generation Firewall (NGFW)", "Kretsnivågateway", "Statiskt filter"],
+      answer: 1,
+      exp: "En NGFW (Next-Generation Firewall) inspekterar hela applikationslagret och kan identifiera program, virus och intrångsförsök."
+    },
+    {
+      topic: "sec",
+      q: "Vad är syftet med digitala certifikat (X.509) och TLS/SSL?",
+      options: ["Validera en webbplats identitet och möjliggöra kryptering", "Öka nätverkets uppladdningshastighet", "Dela ut lokala IP-adresser", "Skapa virtuella routrar"],
+      answer: 0,
+      exp: "TLS-certifikat garanterar att du ansluter till rätt server samt tillhandahåller nycklar för krypterad kommunikation."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär principen om minsta behörighet (Principle of Least Privilege)?",
+      options: ["Användare ska endast ha de behörigheter som krävs för att utföra sitt arbete", "Alla användare ska ha administratörsrättigheter för enkelhetens skull", "Systemet ska ha lägsta möjliga lösenordskrav", "Endast IT-chefen får använda lösenord"],
+      answer: 0,
+      exp: "Minsta behörighet begränsar skadan vid ett eventuellt dataintrång genom att inte ge onödiga administrativa rättigheter."
+    },
+    {
+      topic: "sec",
+      q: "Vad är en 'honeypot' inom IT-säkerhet?",
+      options: ["Ett falskt/sårbart system skapat för att locka och studera angripare", "En krypterad lösenordsdatabas", "Ett antivirusprogram för webbservrar", "En metod för att säkra trådlösa nätverk"],
+      answer: 0,
+      exp: "En honeypot är en avsiktligt lockande fälla som hjälper säkerhetsteam att upptäcka och analysera intrångsförsök."
+    },
+    {
+      topic: "sec",
+      q: "Vilken trådlös säkerhetsstandard är den säkraste och modernaste för Wi-Fi?",
+      options: ["WEP", "WPA", "WPA2", "WPA3"],
+      answer: 3,
+      exp: "WPA3 är den senaste säkerhetsstandarden för Wi-Fi och erbjuder kraftfullt skydd mot offline-lösenordsattacker."
+    },
+    {
+      topic: "sec",
+      q: "Vad är huvudsyftet med en SIEM-lösning (Security Information and Event Management)?",
+      options: ["Samla in och analysera loggar från hela infrastrukturen för att upptäcka hot", "Ersätta alla brandväggar och switchar", "Automatiskt skapa säkra lösenord", "Kryptera användarnas hårddiskar"],
+      answer: 0,
+      exp: "SIEM samlar in och korrelerar loggdata från nätverksenheter, servrar och klienter för att larma om misstänkta händelser."
+    },
+    {
+      topic: "sec",
+      q: "Vad är skillnaden mellan ett IDS (Intrusion Detection System) och ett IPS (Intrusion Prevention System)?",
+      options: ["IDS upptäcker och larmar, medan IPS kan blockera attacken aktivt", "IPS kan bara larma utan åtgärd", "IDS fungerar bara på trådlösa nätverk", "Det är två olika namn på samma funktion"],
+      answer: 0,
+      exp: "Ett IDS övervakar och rapporterar avvikelser, medan ett IPS sitter i trafikflödet och aktivt blockerar identifierade attacker."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär begreppet 'Social Engineering' inom datasäkerhet?",
+      options: ["Att manipulera människor för att få tillgång till skyddad information", "Att optimera databaser för sociala medier", "Att bygga nätverk baserat på sociala relationer", "Att analysera programmeringsspråk"],
+      answer: 0,
+      exp: "Social Engineering utnyttjar mänskliga svagheter som tillit eller stress istället för att hacka tekniska sårbarheter."
+    },
+    {
+      topic: "sec",
+      q: "Vad kallas en attack där skadlig kod injiceras i en databas via ett webbformulär?",
+      options: ["Cross-Site Scripting (XSS)", "SQL Injection (SQLi)", "Buffer Overflow", "DNS Spoofing"],
+      answer: 1,
+      exp: "SQL Injection lurar databasservern att köra godtyckliga SQL-kommandon på grund av bristande validering av användarinput."
+    },
+    {
+      topic: "sec",
+      q: "Vad är syftet med hashfunktioner som SHA-256 inom säkerhet?",
+      options: ["Att skapa en envägs digital fingeravtryck för att verifiera dataintegritet", "Att komprimera stora filer så att de tar mindre plats", "Att tilldela krypterade IP-adresser", "Att återställa förlorade lösenord"],
+      answer: 0,
+      exp: "Hashfunktioner är envägsberäkningar som genererar en unik hash för kontroll av att data eller lösenord inte har ändrats."
+    },
+    {
+      topic: "sec",
+      q: "Vad betyder säkerhetsmodellen 'Zero Trust'?",
+      options: ["Lita inte automatiskt på någon eller något, varken innanför eller utanför nätverket", "Blockera all inkommande trafik från internet permanent", "Ta bort alla behörighetskrav i det interna nätverket", "Använd inga servrar från tredjepartsleverantörer"],
+      answer: 0,
+      exp: "Zero Trust bygger på principen 'aldrig lita på, alltid verifiera' oavsett varifrån anslutningen sker."
+    },
+    {
+      topic: "sec",
+      q: "Vilken nätverkssårbarhet gör det möjligt för en angripare att styra om trafik genom falska MAC-adresskopplingar?",
+      options: ["ARP Poisoning / ARP Spoofing", "MAC Flooding", "DHCP Snooping", "VLAN Hopping"],
+      answer: 0,
+      exp: "ARP Poisoning lurar enheter på samma nätverk att koppla målets IP till angriparens egen MAC-adress."
     }
   ];
 
