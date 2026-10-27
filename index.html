@@ -92,554 +92,554 @@
 <script>
   const questionPool = [
     {
-      q: "Vad innebär begreppet 'effektutvinning ur ett IT-system'?",
+      q: "Vad avses med 'effektutvinning ur ett IT-system' i ett verksamhetsperspektiv?",
       options: [
-        "Att mäta serverhallens strömförbrukning",
-        "Att styra och optimera IT-användningen så att investeringen ger avsedd verksamhetsnytta",
-        "Att överklocka processorerna i ett kluster",
-        "Att köra backupen nattetid för att spara el"
+        "Mätning och optimering av datacenterinfrastrukturens PUE-värde (Power Usage Effectiveness)",
+        "Processer för att säkerställa att tekniska lösningar omsätts i mätbar verksamhetsnytta",
+        "Implementering av prestandahöjande hårdvaruoptimeringar och GPU-accelerering",
+        "Systematisk övervakning av klockfrekvenser och systemresurser under hög belastning"
       ],
       answer: 1,
-      exp: "Effektutvinning handlar om att organisera arbetsmetoder och processer så att IT-infrastrukturen faktiskt levererar sitt avsedda affärsvärde."
+      exp: "Effektutvinning handlar om att styra processer, organisation och användning så att tekniska IT-investeringar faktiskt realiserar avsett värde i verksamheten."
     },
     {
-      q: "Vilken historisk milstolpe representerar IBM 7044 och 7044M inom IT-arkitektur?",
+      q: "Vilken teknisk betydelse hade IBM 7044 / 7044M samt dess efterföljare för IT-arkitektur och säkerhet?",
       options: [
-        "De introducerade de allra första persondatorerna",
-        "De lade grunden för multiprogrammering, hårdvaruskyddade minnesområden och batchkörning",
-        "De skapade den första grafiska webbläsaren",
-        "De var de första bärbara datorerna"
+        "De etablerade industristandarden för distribuerade relationsdatabaser i Unix-miljöer",
+        "De banade väg för multiprogrammering, batchbearbetning och hårdvarubaserat minnesskydd",
+        "De introducerade asymmetrisk kryptering för kommersiella transaktionssystem",
+        "De utvecklade de första paketförmedlande protokollen för WAN-kommunikation"
       ],
       answer: 1,
-      exp: "IBM 7044-systemen var avgörande för utvecklingen av processisolering, privilegierade lägen och samtidig resursdelning."
+      exp: "Historiska IBM-system som 7044 lade grunden för modern IT-arkitektur genom att introducera multiprogrammering och minnesisolering mellan processer."
     },
     {
-      q: "Vad kännetecknar IBM System p och dess PowerVM-teknik inom virtualisering?",
+      q: "Vad kännetecknar IBM System p och dess PowerVM-arkitektur vid resurshantering?",
       options: [
-        "Konsumentprogram för skrivbordsvirtualisering",
-        "Hårdvarunära logisk partitionering (LPAR) med mikrosegmentering av processorer och hög tillförlitlighet",
-        "Ett antivirusprogram för Unix",
-        "Ett gratis filsystem för Mac"
+        "Mjukvarubaserad virtualisering av x86-binärer via dynamisk instruktionsöversättning",
+        "Hårdvarunära logisk partitionering (LPAR) med Micro-Partitioning och delade processorer",
+        "Containerbaserad isolering direkt i kärnan på enbart AIX-operativsystemet",
+        "Klusterhantering byggd på asynkron minnesspegling mellan separata kontrollkort"
       ],
       answer: 1,
-      exp: "IBM System p (Power Systems) använder PowerVM för LPAR med extremt flexibel och säker hårdvarupartitionering."
+      exp: "PowerVM på IBM Power Systems (System p) använder Micro-Partitioning för att tilldela delar av processorkärnor till logiska partitioner (LPAR)."
     },
     {
-      q: "Vad är den grundläggande skillnaden mellan Typ 1 (Bare-metal) och Typ 2 (Hosted) hypervisors?",
+      q: "Vad är den principiella arkitektoniska skillnaden mellan en Typ 1 och en Typ 2 hypervisor?",
       options: [
-        "Typ 1 körs direkt på serverns hårdvara, medan Typ 2 körs som en applikation ovanpå ett värdoperativsystem",
-        "Typ 2 körs direkt på moderkortet och Typ 1 i BIOS",
-        "Typ 1 stödjer endast Windows och Typ 2 endast Linux",
-        "Det finns ingen arkitektonisk skillnad"
+        "Typ 1 exekverar direkt på hårdvaran medan Typ 2 körs som en process på ett värdoperativsystem",
+        "Typ 1 kräver hårdvaruemulering medan Typ 2 alltid använder fullständig paravirtualisering",
+        "Typ 1 är begränsad till monolitiska kärnor medan Typ 2 bygger på mikrokärnor",
+        "Typ 1 stödjer enbart gästoperativsystem med samma instruktionsuppsättning som värden"
       ],
       answer: 0,
-      exp: "Typ 1 (t.ex. VMware ESXi, KVM, Proxmox) har direkt hårdvaruåtkomst utan mellanliggande OS, vilket ger högre prestanda och säkerhet."
+      exp: "Typ 1 (bare-metal) körs direkt på maskinvaran, medan Typ 2 körs ovanpå ett värdoperativsystem."
     },
     {
-      q: "Vad innebär 'PC-virtualisering' för en IT-säkerhetstekniker?",
+      q: "Vad är det primära användningsområdet för PC-virtualisering för en IT-säkerhetstekniker?",
       options: [
-        "Att simulera tangentbordet med pekskärm",
-        "Att köra isolerade gästoperativsystem lokalt på sin arbetsstation för tester, malware-analys eller miljöseparation",
-        "Att göra datorn trådlös",
-        "Att byta ut hårddisken mot band"
+        "Att optimera arbetsstationens strömförbrukning och minnesallokering under drift",
+        "Att köra isolerade miljöer lokalt för malware-analys, tester och segmentering",
+        "Att möjliggöra fjärrskrivbordsinloggning till datacenter via hårdvaruaccelerering",
+        "Att ersätta klientdatorns lokala BIOS med en krypterad systemavbildning"
       ],
       answer: 1,
-      exp: "PC-virtualisering (t.ex. VMware Workstation, VirtualBox) möjliggör isolerade laboratoriemiljöer direkt på en klients dator."
+      exp: "PC-virtualisering låter tekniker analysera misstänkt kod eller testa systemkonfigurationer i sandlådor utan risk för värddatorn."
     },
     {
-      q: "Vad innebär 'applikationsvirtualisering'?",
+      q: "Vad uppnås främst med applikationsvirtualisering jämfört med lokal installation?",
       options: [
-        "Att applikationen paketeras i en isolerad behållare med sina beroenden utan att installeras i värdsystemet",
-        "Att källkoden körs direkt i webbläsaren utan kompilering",
-        "Att simulera skärmupplösningen",
-        "Att lagra installationsfiler i BIOS"
+        "Programmet körs inkapslat med egna bibliotek och påverkar inte värdsystemets register",
+        "Applikationen tilldelas direkt hårdvaruåtkomst till GPU utan mellanliggande drivrutiner",
+        "Exekveringen flyttas automatiskt till en distribuerad lagringsyta vid överbelastning",
+        "Källkoden kompileras om i realtid till maskinkod anpassad för gästoperativsystemet"
       ],
       answer: 0,
-      exp: "Applikationsvirtualisering isolerar programmet från underliggande OS, vilket förhindrar konflikter mellan olika programversioner."
+      exp: "Applikationsvirtualisering kapslar in programmet och dess beroenden så att konflikter med operativsystemet och andra program undviks."
     },
     {
-      q: "Vad är syftet med 'datavirtualisering' inom en IT-infrastruktur?",
+      q: "Vad definierar datavirtualisering inom en IT-infrastruktur?",
       options: [
-        "Att flytta all data till magnetband",
-        "Att ge applikationer en enhetlig åtkomst till data från flera källor i realtid utan att flytta den fysiskt",
-        "Att kryptera diskar på skikt 1",
-        "Att radera oanvänd data automatiskt"
+        "Blockbaserad komprimering och synkron spegling av data över två datacenter",
+        "Ett abstraktionslager som ger enhetlig dataåtkomst utan krav på fysisk konsolidering",
+        "Automatisk arkivering av sällan använd information till bandbaserade medier",
+        "Kryptering av databaser på filsystemnivå med distribuerade hårdvarunycklar"
       ],
       answer: 1,
-      exp: "Datavirtualisering skapar ett abstraktionslager ovanpå flera datakällor så att de kan läsas och hanteras som en enhetlig databas."
+      exp: "Datavirtualisering gör att system kan hämta och hantera data från skilda datakällor som om de vore en gemensam databas, utan fysisk flytt."
     },
     {
-      q: "Vad innebär den allvarliga sårbarheten 'Hypervisor Escape' (VM Escape)?",
+      q: "Vilket allvarligt säkerhetshot innebär ett s.k. 'Hypervisor Escape' (VM Escape)?",
       options: [
-        "Att den virtuella maskinen tappar nätverkskontakten",
-        "Att skadlig kod bryter sig ut ur gästsystemet och exekverar kod med hypervisorns behörighet",
-        "Att en server stänger av sig automatiskt",
-        "Att en virtuell disk blir full"
-      ],
-      answer: 1,
-      exp: "Hypervisor Escape bryter den logiska isoleringen mellan gäst och värd, vilket ger angriparen full kontroll över den underliggande infrastrukturen."
-    },
-    {
-      q: "Vad kännetecknar en IT-infrastruktur med 'Hög tillgänglighet' (High Availability)?",
-      options: [
-        "Att systemet är öppet för alla utan inloggning",
-        "Arkitektur med redundans och automatisk redundansväxling (failover) för att minimera oplanerade avbrott",
-        "Att systemet har obegränsat med lagringsutrymme",
-        "Att alla servrar kör samma IP-adress"
-      ],
-      answer: 1,
-      exp: "Hög tillgänglighet bygger på redundanta komponenter (strömförsörjning, nät, klusternoder) som tar över utan manuellt ingripande vid fel."
-    },
-    {
-      q: "Vad innebär backup-strategin '3-2-1-regeln'?",
-      options: [
-        "3 servrar, 2 brandväggar, 1 switch",
-        "3 datakopior, sparade på minst 2 olika medietyper, varav 1 lagras på annan fysisk/geografisk plats",
-        "3 lösenord, 2 administratörer, 1 backupkatalog",
-        "3 veckors lagring, 2 timmars återställning, 1 administratör"
-      ],
-      answer: 1,
-      exp: "3-2-1-regeln skyddar mot såväl hårdvarufel och naturkatastrofer som lokal utpressningsprogramvara."
-    },
-    {
-      q: "Vad definierar RPO (Recovery Point Objective)?",
-      options: [
-        "Den maximalt acceptabla tidsperioden av förlorad data räknat bakåt från ett haveri",
-        "Den tid det tar att starta om en server",
-        "Hur länge en server får stå oanvänd",
-        "Maximala antalet användare vid återställning"
+        "En angripare i en virtuell maskin bryter isoleringen och exekverar kod på värdhypervisorn",
+        "En oauktoriserad användare fångar upp okrypterad styrdata på ledningsnätverket",
+        "Gästoperativsystemet förlorar sin logiska koppling till den delade lagringsvolymen",
+        "Virtuella nätverkskort växlar automatiskt till promiskuöst läge vid minnesbrist"
       ],
       answer: 0,
-      exp: "RPO bestämmer hur ofta backup måste ske; ett RPO på 1 timme innebär att verksamheten tolererar max 1 timmes dataförlust."
+      exp: "VM Escape är en kritisk sårbarhet där gästmaskinen bryter sig ur isoleringen och får behörighet på hypervisornivå."
     },
     {
-      q: "Vad definierar RTO (Recovery Time Objective)?",
+      q: "Vilken princip är mest grundläggande för att uppnå Hög tillgänglighet (HA) i en servermiljö?",
       options: [
-        "Hur gammal en server får vara innan byte",
-        "Den maximala acceptabla stilleståndstiden från det att ett avbrott inträffar till att systemet är driftsatt igen",
-        "Tiden det tar att ta en fullständig backup",
-        "Kostnaden per avbrottstimme"
+        "Tillämpning av RAID 0 över samtliga anslutna lokala NVMe-enheter",
+        "Redundanta systemkomponenter och automatiserade mekanismer för redundansväxling",
+        "Att centralisera all beräkning och lagring till en enskild högpresterande servernod",
+        "Periodisk schemalagd kallstart av hypervisorn för att förebygga minnesläckor"
       ],
       answer: 1,
-      exp: "RTO sätter tidsgränsen för hur snabbt IT-infrastrukturen måste återställas och vara operativ efter ett fel."
+      exp: "Hög tillgänglighet kräver redundans på samtliga kritiska punkter samt automatiserad failover vid komponenthaveri."
     },
     {
-      q: "Hur skapar 'överallokering' (overcommitment) av minne och CPU en säkerhets- och driftsrisk?",
+      q: "Vad innebär den etablerade 3-2-1-principen vid säkerhetskopiering?",
       options: [
-        "Det raderar hypervisorns operativsystem",
-        "Det kan leda till 'Resource Exhaustion' och Denial of Service om flera gästsystem belastas maximalt samtidigt",
-        "Det ändrar switcharnas portkonfiguration",
-        "Det tvingar fram automatisk kryptering"
+        "3 administratörer, 2 oberoende autentiseringsfaktorer och 1 behörighetsroll",
+        "3 datakopior, sparade på 2 olika medietyper, varav 1 kopia på separat geografisk plats",
+        "3 timmars RPO, 2 timmars RTO och 1 årlig revision av återställningsrutinen",
+        "3 differentiella backuper, 2 fullständiga avbildningar och 1 arkivkopia"
       ],
       answer: 1,
-      exp: "Om mer RAM eller vCPU lovats än vad som fysiskt finns riskerar hypervisorn att krascha eller frysa alla virtuella maskiner vid belastningstoppar."
+      exp: "3-2-1-regeln stipulerar tre kopior på minst två olika medieslag, varav en kopia placerad off-site."
     },
     {
-      q: "Vilken mekanism är mest central för att fördela datorresurser till flera simultana tillämpningar?",
+      q: "Hur definieras måttet RPO (Recovery Point Objective) vid katastrofplanering?",
       options: [
-        "Att ge alla applikationer 100% fri tillgång till CPU",
-        "Resursisolering och kvoter (t.ex. Linux cgroups) så att en process inte svälter ut andra",
-        "Att koppla ur sekundära nätverkskort",
-        "Att schemalägga omstarter var 30:e minut"
-      ],
-      answer: 1,
-      exp: "Resurskvoter och processgruppering (som cgroups i Linux) säkerställer rättvis resursfördelning och förhindrar överbelastning."
-    },
-    {
-      q: "Vad är en 'Immutable Backup' och varför är den kritisk mot ransomware?",
-      options: [
-        "En backup som raderas omedelbart efter granskning",
-        "En skrivskyddad säkerhetskopia (WORM) som varken kan raderas eller krypteras under en förutbestämd period",
-        "En backup som inte kräver lagringsutrymme",
-        "En manuellt kopierad textfil"
-      ],
-      answer: 1,
-      exp: "Oföränderliga säkerhetskopior skyddar mot utpressningsangrepp där angriparen först försöker radera alla tillgängliga backuper."
-    },
-    {
-      q: "Vilket öppet verktyg/kärnmodul i Linux förvandlar operativsystemet till en fullvärdig Typ 1-hypervisor?",
-      options: [
-        "Samba",
-        "KVM (Kernel-based Virtual Machine)",
-        "Apache",
-        "BIND"
-      ],
-      answer: 1,
-      exp: "KVM bygger in hypervisorkapacitet direkt i Linux-kärnan och används i stor utsträckning i enterprise- och molnmiljöer."
-    },
-    {
-      q: "Vad innebär 'live migration' av en virtuell server (t.ex. VMware vMotion)?",
-      options: [
-        "Att flytta en aktiv virtuell maskin mellan fysiska värdar utan något märkbart driftavbrott",
-        "Att säkerhetskopiera hela servern till USB",
-        "Att byta CPU medan datorn är på",
-        "Att konvertera Linux till Windows"
+        "Den maximalt tolererbara mängden dataförlust mätt i tid bakåt från ett driftavbrott",
+        "Den beräknade tidsåtgången för att driftsätta samtliga gästoperativsystem på reservhårdvara",
+        "Tiden det tar för klusternoder att registrera att en värd har slutat svara på nätverket",
+        "Tidsintervallet mellan två på varandra följande fullständiga integritetskontroller"
       ],
       answer: 0,
-      exp: "Live migration kopierar minnestillstånd och exekvering i realtid över nätverket till en annan hårdvarunod."
+      exp: "RPO mäter hur mycket data verksamheten kan tolerera att förlora uttryckt i tid (hur färsk backupen måste vara)."
     },
     {
-      q: "Varför räknas ett 'Snapshot' i en hypervisor inte som en riktig backup?",
+      q: "Hur definieras måttet RTO (Recovery Time Objective)?",
       options: [
-        "För att snapshots bara fungerar på SSD-diskar",
-        "För att det är en beroende differensfil; om originaldisken skadas går även snapshotet förlorat",
-        "För att snapshots krypterar gästsystemet",
-        "För att de inte kan tas när maskinen är igång"
+        "Den maximalt acceptabla åldern på de hårdvarukomponenter som används i driftmiljön",
+        "Den maximalt tillåtna tiden från avbrottets uppkomst tills systemet är fullt operativt",
+        "Den totala tid en differentiell säkerhetskopiering får ta under ordinarie underhållsfönster",
+        "Tidsåtgången för att synkronisera lagringsblock över ett asynkront replikerat SAN"
       ],
       answer: 1,
-      exp: "Snapshots är temporära ändringsloggar kopplade till basdisken. De ger ingen isolerad redundans och sänker prestandan om de sparas länge."
+      exp: "RTO anger den tidsgräns inom vilken infrastrukturen måste vara återställd och i drift efter ett haveri."
     },
     {
-      q: "Vad innebär termen 'VM Sprawl' ur ett infrastruktursäkerhetsperspektiv?",
+      q: "Vilken teknisk risk medför kraftig överallokering (overcommitment) av minne och CPU?",
       options: [
-        "Att virtuella servrar skapas okontrollerat och glöms bort, vilket skapar opatchade och sårbara attackytor",
-        "Att serverhallens golvyta blir full",
-        "Att gästsystemen förbrukar för mycket elkraft",
-        "Att hypervisorns licens upphör att gälla"
+        "Paritetsfel på systembussen som tvingar processorerna i säkert felläge",
+        "Resursutmattning som kan leda till prestandakollaps eller Denial of Service för alla gäster",
+        "Automatisk nedgradering av vSwitch-portarnas länkhastigheter från 10 Gbps till 1 Gbps",
+        "Att virtuella lagringsdiskar konverteras från Thin till Thick Provisioning oavsiktligt"
+      ],
+      answer: 1,
+      exp: "Om virtuella maskiner förbrukar mer fysiskt minne eller CPU än vad som finns tillgängligt uppstår allvarlig resursbrist och driftstopp."
+    },
+    {
+      q: "Vilken Linux-mekanism används främst för att begränsa och isolera resursallokering mellan processer?",
+      options: [
+        "iptables och nftables",
+        "Control Groups (cgroups)",
+        "Extended File System (ext4)",
+        "Kernel Samepage Merging (KSM)"
+      ],
+      answer: 1,
+      exp: "Control Groups (cgroups) i Linux-kärnan isolerar och begränsar resursutnyttjande (CPU, minne, disk-I/O) för processer och containers."
+    },
+    {
+      q: "Vad kännetecknar en oföränderlig säkerhetskopia (Immutable Backup)?",
+      options: [
+        "Den kan varken raderas, krypteras eller ändras under en fastställd retentionsperiod",
+        "Den förvaras permanent i hypervisorns primära flyktiga RAM-minne för direkt återställning",
+        "Den är undantagen från all form av komprimering och blockdeduplicering i lagringsarrayen",
+        "Den använder symmetriska nycklar som genereras på nytt vid varje läsning"
       ],
       answer: 0,
-      exp: "VM Sprawl leder till förlorad kontroll över inventariet, med övergivna servrar som inte uppdateras och blir lätta måltavlor."
+      exp: "Oföränderliga backuper skyddas med WORM-princip (Write Once, Read Many) för att stå emot ransomware som försöker manipulera återställningsdata."
     },
     {
-      q: "Vilken hårdvarufunktion i moderna processorer krävs för hårdvaruassisterad virtualisering?",
+      q: "Vilken roll har modulen KVM (Kernel-based Virtual Machine) i Linux?",
+      options: [
+        "Den agerar grafiskt användargränssnitt för containerhantering via Docker",
+        "Den omvandlar Linux-kärnan till en Typ 1-hypervisor med hårdvaruassisterad virtualisering",
+        "Den agerar som en distribuerad mjukvarubrandvägg på OSI-modellens applikationslager",
+        "Den hanterar automatisk synkronisering av domänkontrollanter mot Active Directory"
+      ],
+      answer: 1,
+      exp: "KVM integrerar hypervisorkapacitet i Linux-kärnan och möjliggör exekvering av virtuella maskiner via hårdvarustöd (Intel VT-x / AMD-V)."
+    },
+    {
+      q: "Vad sker i bakgrunden vid en 'live migration' (t.ex. VMware vMotion) av en aktiv virtuell maskin?",
+      options: [
+        "Aktivt RAM-minne och processortillstånd replikeras kontinuerligt över nätet till målvärden",
+        "Gästmaskinen pausas och startas om från föregående snapshot på den nya noden",
+        "Lagringsvolymen flyttas fysiskt mellan diskkontrollrarna utan nätverksöverföring",
+        "Virtuella nätverkskort tilldelas tillfälliga loopback-adresser under dataöverföringen"
+      ],
+      answer: 0,
+      exp: "Live migration överför maskinens aktiva minnestillstånd och exekvering mellan värdar via nätverket utan märkbart driftavbrott."
+    },
+    {
+      q: "Varför utgör ett snapshot i en virtualiseringsplattform inte en fullvärdig backup?",
+      options: [
+        "Det är en beroende differensfil som kräver att grunddisken är intakt och feltolerant",
+        "Det sparar enbart operativsystemets drivrutiner men inte användardata på disken",
+        "Det kan enbart skapas när den virtuella maskinen befinner sig i avstängt felläge",
+        "Det konverterar automatiskt den underliggande datavolymen till okrypterat format"
+      ],
+      answer: 0,
+      exp: "Snapshots är differensfiler beroende av originaldisken; korrumperas basdisken blir även snapshoten obrukbar."
+    },
+    {
+      q: "Vilken säkerhetsrisk associeras med fenomenet 'VM Sprawl' i datacenter?",
+      options: [
+        "Överhettning i serverracken på grund av för tät fysisk montering av bladservrar",
+        "Glömda, opatchade virtuella maskiner som bildar oövervakade attackytor",
+        "Att hypervisorns routingtabeller överbelastas med för många statiska vägar",
+        "Att fiberkanalernas ljussignal dämpas av överdriven paketfragmentering"
+      ],
+      answer: 1,
+      exp: "VM Sprawl innebär okontrollerad tillväxt av virtuella servrar som saknar ägarskap och inte underhålls med säkerhetsuppdateringar."
+    },
+    {
+      q: "Vilken CPU-instruktionsuppsättning krävs för hårdvaruassisterad virtualisering på moderna processorer?",
       options: [
         "Intel VT-x eller AMD-V",
-        "DirectX 12",
-        "Overclocking Mode",
-        "Bluetooth 5.0"
+        "SSE4.2 eller AVX-512",
+        "ARM TrustZone eller SGX",
+        "AES-NI eller SHA Extensions"
       ],
       answer: 0,
-      exp: "Intel VT-x och AMD-V tillhandahåller instruktionsuppsättningar som hanterar virtualisering på hårdvarunivå säkert och effektivt."
+      exp: "Intel VT-x och AMD-V tillför hårdvaruinstruktioner för att hypervisorn ska kunna hantera gästsystem säkert och effektivt."
     },
     {
-      q: "Vad är skillnaden mellan 'Thick Provisioning' och 'Thin Provisioning' vid disktilldelning?",
+      q: "Vad innebär 'Thin Provisioning' vid allokering av virtuella lagringsvolymer?",
       options: [
-        "Thick allokerar hela det begärda diskutrymmet direkt på lagringen, medan Thin endast tar det utrymme som faktiskt skrivs",
-        "Thin är krypterat och Thick är okrypterat",
-        "Thick används endast för databaser och Thin för webbservrar",
-        "Thin tillåter inga ändringar efter installation"
+        "Lagringsutrymme allokeras på det fysiska mediet först i takt med att data skrivs",
+        "Hela volymens maximala storlek reserveras och nollställs omedelbart vid skapandet",
+        "Disken komprimeras och flyttas till en extern lagringsyta efter varje avslutad session",
+        "Lagringsblocket skyddas med hårdvarubaserad paritet över minst tre skilda diskar"
       ],
       answer: 0,
-      exp: "Thin Provisioning sparar fysisk lagringskapacitet genom att växa dynamiskt vid behov, men kräver noggrann övervakning mot full disk."
+      exp: "Thin Provisioning förbrukar endast den fysiska diskyta som faktiskt fyllts med data av gästsystemet."
     },
     {
-      q: "Vilken risk uppstår om gästsystem i olika säkerhetszoner ansluts till samma virtuella switch utan isolering?",
+      q: "Vilken risk uppstår om virtuella maskiner från skilda säkerhetszoner ansluts till samma virtuella switch utan VLAN?",
       options: [
-        "Serverns fläktar slutar fungera",
-        "Oavsiktligt trafikläckage och risk för manipulation av nätverkstrafik mellan isolerade segment",
-        "Hypervisorn återställs till fabriksinställningar",
-        "Gästernas klockor avsynkroniseras"
-      ],
-      answer: 1,
-      exp: "Utan korrekt VLAN-separering eller mikrosegmentering kan trafik avlyssnas eller attackeras mellan säkerhetszoner på samma switch."
-    },
-    {
-      q: "Vad innebär hårdvarusårbarheter av typen 'Side-Channel Attacks' (t.ex. Spectre och Meltdown)?",
-      options: [
-        "Att kablar dras ur serverchassit",
-        "Att gäster kan utläsa hemlig data från andra virtuella maskiner via mikromarkörer i CPU:ns delade cache och spekulativa exekvering",
-        "Att tangentbordet avlyssnas akustiskt",
-        "Att routern saknar administratörslösenord"
-      ],
-      answer: 1,
-      exp: "Sidokanalattacker utnyttjar arkitektoniska optimeringar i delade processorer för att läsa data över behörighetsgränser."
-    },
-    {
-      q: "Vad innebär 'Clustering' med delad lagring (SAN/NAS) i en serverinfrastruktur?",
-      options: [
-        "Att alla servrar kör på samma moderkort",
-        "Att flera servernoder samverkar så att virtuella maskiner omedelbart kan startas om på en annan nod vid hårdvarufel",
-        "Att lösenorden delas mellan alla administratörer",
-        "Att internetanslutningen kopplas bort"
-      ],
-      answer: 1,
-      exp: "Serverkluster tillsammans med delad lagring eliminerar 'Single Points of Failure' och möjliggör automatisk failover."
-    },
-    {
-      q: "Vad innebär 'Infrastructure as Code' (IaC) och hur bidrar det till infrastrukturssäkerhet?",
-      options: [
-        "Att servrar manuellt installeras med skivor",
-        "Att hela infrastrukturen definieras i versionshanterade kodfiler, vilket ger spårbara, konsekventa och repeterbara konfigurationer",
-        "Att operativsystemets källkod skrivs ut på papper",
-        "Att säkerhetspolicyer ersätts av brandväggsloggar"
-      ],
-      answer: 1,
-      exp: "IaC (t.ex. Terraform, Ansible) minimerar mänskliga felkonfigurationer och möjliggör säkerhetsgranskning innan förändringar rullas ut."
-    },
-    {
-      q: "Vad är syftet med en 'SAN' (Storage Area Network) i en datacenterplattform?",
-      options: [
-        "Ett dedikerat höghastighetsnät för blocklagring mellan servrar och lagringssystem",
-        "Ett publikt Wi-Fi för besökare",
-        "Ett antivirusprogram för hela serverhallen",
-        "En backupmetod enbart för e-post"
+        "Paketläckage och möjlighet till avlyssning eller manipulation mellan zoner",
+        "Att fysiska nätverkskort bränns sönder av för höga spänningsnivåer på ledningen",
+        "Att virtuella maskiner förlorar sina unika licensnycklar gentemot domänservern",
+        "Att routerns minne raderas vid varje mottaget broadcast-paket från nätet"
       ],
       answer: 0,
-      exp: "SAN tillhandahåller snabb och centraliserad blocklagring (ofta via Fibre Channel eller iSCSI) för virtuella kluster."
+      exp: "Utan nätverkssegmentering (t.ex. 802.1Q VLAN) kan trafik spridas okontrollerat mellan maskiner som borde vara isolerade."
     },
     {
-      q: "Vad innebär begreppet 'Single Point of Failure' (SPOF)?",
+      q: "Vad utnyttjar sårbarheter av typen Spectre och Meltdown i virtualiserade processormiljöer?",
       options: [
-        "En enskild komponent som om den havererar orsakar att hela systemet slutar fungera",
-        "Ett misslyckat inloggningsförsök",
-        "En trasig skärmkabel till administratörens dator",
-        "Ett nätverkskort med låg bandbredd"
+        "Tidsbaserad analys av delad CPU-cache i kombination med spekulativ exekvering",
+        "Brister i den fysiska strömförsörjningen som orsakar minneskorruption i L3-cachen",
+        "Svagheter i hypervisorns nätverkspaketfiltrering på OSI-modellens datalänkskikt",
+        "Felaktigt implementerade paritetsbitar på oregistrerade DDR4-minnesmoduler"
       ],
       answer: 0,
-      exp: "Identifiering och eliminering av SPOF:ar (genom t.ex. redundanta nätdelar och länkar) är kärnan i tillförlitlig infrastrukturdesign."
+      exp: "Spectre och Meltdown är sidokanalsangrepp som utnyttjar spekulativ exekvering och mäter tidsdifferenser i processorns cache för att läsa otillåtet minne."
     },
     {
-      q: "Vilket filsystem i Linux/Unix erbjuder inbyggd dataintegritetskontroll (checksummor), snapshots och mjukvaru-RAID?",
+      q: "Vad är syftet med ett högtillgänglighetskluster med delad lagring (SAN)?",
       options: [
-        "FAT32",
-        "ZFS (eller Btrfs)",
-        "NTFS",
-        "ext2"
-      ],
-      answer: 1,
-      exp: "ZFS kombinerar volymhantering och filsystem med kontinuerlig kontrollsummevalidering mot tyst datakorruption (bit rot)."
-    },
-    {
-      q: "Vad är en 'Warm Site' i en katastrofåterställningsplan (Disaster Recovery)?",
-      options: [
-        "En serverhall utan luftkonditionering",
-        "En reservanläggning med hårdvara och nätverk installerat, men där data behöver läsas in innan driftstart",
-        "En helt speglad miljö som tar över inom en millisekund",
-        "En plats där endast reservdelar förvaras"
-      ],
-      answer: 1,
-      exp: "En Warm Site har grundläggande infrastruktur på plats, till skillnad från en Hot Site (omedelbar) och Cold Site (saknar förberedd hårdvara)."
-    },
-    {
-      q: "Vad innebär 'Deduplicering' vid lagring av backuper i en IT-infrastruktur?",
-      options: [
-        "Att ta bort dubbletter av datablock så att endast unika data sparas på disken",
-        "Att kryptera filnamnen",
-        "Att radera filer äldre än 1 år",
-        "Att spara två kopior av varje fil på samma disk"
+        "Att eliminera Single Point of Failure genom att automatiskt starta om gästmaskiner på fungerande noder",
+        "Att fördubbla överföringshastigheten för varje gästs lokala Ethernet-anslutning",
+        "Att kryptera all intern kommunikation med engångslösenord på hårdvarunivå",
+        "Att samla samtliga användarkonton i en gemensam okrypterad databasfil"
       ],
       answer: 0,
-      exp: "Deduplicering sparar enorma mängder lagringsutrymme genom att referera till redan existerande datablock istället för att spara dubbletter."
+      exp: "Ett kluster sammankopplat med delad lagring möjliggör automatisk redundansväxling (failover) vid hårdvaruhaveri på en enskild nod."
     },
     {
-      q: "Vad innebär 'Mikrosegmentering' i en mjukvarudefinierad serverinfrastruktur (SDN)?",
+      q: "Hur bidrar principen 'Infrastructure as Code' (IaC) till infrastruktursäkerhet?",
       options: [
-        "Att minska kabelarean i serverhallen",
-        "Att tillämpa granulära säkerhetspolicyer och brandväggsregler ända ner på individuell virtuell maskinnivå",
-        "Att partitionera CPU:ns L1-cache",
-        "Att begränsa serverns lagring till 1 TB"
-      ],
-      answer: 1,
-      exp: "Mikrosegmentering förhindrar lateral rörelse för angripare genom att isolera varje virtuell arbetsbörda från andra i samma nätverk."
-    },
-    {
-      q: "Vad är den primära funktionen hos en LOM/IPMI-modul (t.ex. Dell iDRAC eller HPE iLO)?",
-      options: [
-        "Out-of-band administration som låter administratören styra servern på hårdvarunivå även när operativsystemet är avstängt",
-        "Att öka CPU:ns klockfrekvens",
-        "Att kyla serverns internminne",
-        "Att automatiskt installera Windows-uppdateringar"
+        "Genom att konfigurationer versionshanteras, granskas och rullas ut enhetligt och repeterbart",
+        "Genom att eliminera behovet av brandväggar och behörighetskontroller i nätverket",
+        "Genom att konvertera virtuella servrar till proprietära hårdvarubaserade mikrokontroller",
+        "Genom att automatiskt dölja samtliga aktiva portar för auktoriserade administratörer"
       ],
       answer: 0,
-      exp: "Out-of-band-hantering (IPMI/iDRAC/iLO) ger fjärrstyrning av ström, konsol och BIOS oberoende av serverns OS-status."
+      exp: "IaC minskar risken för mänskliga misstag, garanterar konsistens och tillåter versionshanterad granskning av infrastrukturen."
     },
     {
-      q: "Vad innebär 'Kapacitetsplanering' (Capacity Planning) för en systemtekniker?",
+      q: "Vad definierar ett SAN (Storage Area Network) i en modern serverinfrastruktur?",
       options: [
-        "Att beräkna hur många servrar som får plats på ett skrivbord",
-        "Att kontinuerligt analysera resursutnyttjande och trender för att säkerställa att CPU, minne och lagring räcker till framtida behov",
-        "Att begränsa användarnas filstorlek till 10 MB",
-        "Att stänga av servrar på helgerna"
-      ],
-      answer: 1,
-      exp: "Kapacitetsplanering säkerställer att infrastrukturen skalas upp i god tid innan flaskhalsar orsakar prestandaproblem eller driftstopp."
-    },
-    {
-      q: "Vad är skillnaden mellan inkrementell backup och differentiell backup?",
-      options: [
-        "Inkrementell sparar ändringar sedan senaste backupen oavsett typ; differentiell sparar ändringar sedan senaste fullständiga backupen",
-        "Differentiell sparar bara operativsystemet",
-        "Inkrementell kan inte återställas",
-        "Differentiell raderar källfilerna efteråt"
+        "Ett dedikerat höghastighetsnätverk för blocklagring mellan servrar och lagringssystem",
+        "Ett mjukvarubaserat protokoll för fjärrstyrning av skrivare i lokala nätverk",
+        "En virtuell switch som uteslutande hanterar trådlös kryptering via WPA3-Enterprise",
+        "Ett filbaserat delningsprotokoll som enbart nyttjas av Windows-klienter via SMB"
       ],
       answer: 0,
-      exp: "Inkrementell backup går snabbast att ta men kräver alla steg vid återställning; differentiell kräver endast full backup plus senaste diffen."
+      exp: "SAN är ett specialiserat nätverk (ofta Fibre Channel eller iSCSI) utformat för snabb överföring av data på blocknivå."
     },
     {
-      q: "Vad är en 'Container' (t.ex. Docker) i jämförelse med en full virtuell maskin (VM)?",
+      q: "Vad innebär begreppet Single Point of Failure (SPOF)?",
       options: [
-        "Containers delar värdsystemets operativsystemkärna och är betydligt mer resurssnåla än en VM som kör ett komplett gäst-OS",
-        "Containers har egen hårdvaruemulering för BIOS och grafik",
-        "Containers kräver alltid en Typ 1-hypervisor",
-        "Det finns ingen prestandaskillnad"
+        "En enskild sårbarhet eller komponent som vid fel slår ut hela systemets funktion",
+        "En misslyckad autentisering som blockerar en administratörs användarkonto permanent",
+        "Ett felaktigt konfigurerat nätverkskort som orsakar fördröjningar på en switchport",
+        "En avbruten säkerhetskopiering som kräver manuell omstart av hypervisorns tjänster"
       ],
       answer: 0,
-      exp: "Containers virtualiserar på operativsystemnivå och delar kärnan, medan traditionella virtuella maskiner emulerar fullständig hårdvara och kör ett eget OS."
+      exp: "En SPOF är en kritisk del i en arkitektur som saknar redundans och vars fall orsakar totalt driftstopp."
     },
     {
-      q: "Vilken typ av RAID ger både spegling och prestanda genom att kombinera striping och spegling över minst 4 diskar?",
+      q: "Vilka primära säkerhets- och integritetsfunktioner erbjuder filsystemet ZFS?",
       options: [
-        "RAID 0",
-        "RAID 1",
-        "RAID 5",
-        "RAID 10 (1+0)"
-      ],
-      answer: 3,
-      exp: "RAID 10 kombinerar fördelarna från RAID 1 (redundans via spegling) och RAID 0 (läs- och skrivprestanda via striping)."
-    },
-    {
-      q: "Vad innebär 'Configuration Drift' i en IT-infrastruktur?",
-      options: [
-        "Att hårdvaran förflyttar sig fysiskt i serverracket",
-        "Att servrars konfigurationer gradvis glider isär på grund av odokumenterade manuella ändringar över tid",
-        "Att serverklockan drar sig",
-        "Att nätverkskablarna slits ut"
-      ],
-      answer: 1,
-      exp: "Configuration Drift leder till inkonsekventa miljöer, dolda sårbarheter och oförutsägbara fel vid felsökning och uppdateringar."
-    },
-    {
-      q: "Vad är syftet med 'NTP' (Network Time Protocol) i en server- och domäninfrastruktur?",
-      options: [
-        "Att ladda ner nya klock-widgets",
-        "Att säkerställa att alla servrars klockor är exakt synkroniserade, vilket är ett krav för certifikat, Kerberos-autentisering och logganalys",
-        "Att mäta bandbredd per sekund",
-        "Att stänga av servrar på natten"
-      ],
-      answer: 1,
-      exp: "Tidssynkronisering är fundamentalt i IT-infrastruktur; Kerberos tillåter exempelvis som standard maximalt 5 minuters tidsavvikelse."
-    },
-    {
-      q: "Vilken roll har 'Redundanta nätaggregat' (Dual Power Supplies) i en rackmonterad server?",
-      options: [
-        "Att fördubbla serverns processorprestanda",
-        "Att tillåta att servern ansluts till två separata strömkällor/UPS-fasor utan avbrott om en fas försvinner",
-        "Att halvera serverns elförbrukning",
-        "Att kyla chassit mer effektivt"
-      ],
-      answer: 1,
-      exp: "Redundanta nätdelar skyddar mot såväl internt hårdvaruhaveri i en nätdel som strömavbrott på en matande elkrets."
-    },
-    {
-      q: "Vad innebär 'Air-gapped backup'?",
-      options: [
-        "En säkerhetskopia som kyls med tryckluft",
-        "En backupkopia som är helt fysiskt eller logiskt isolerad från alla nätverk och anslutningar",
-        "En trådlös backup över 5G",
-        "Ett molnlagringskonto utan kryptering"
-      ],
-      answer: 1,
-      exp: "Ett air-gap innebär att det inte finns någon elektronisk åtkomst till mediet, vilket omöjliggör fjärrangrepp och manipulation via nätverk."
-    },
-    {
-      q: "Vad innebär termen 'Hyperconvergence' (HCI - Hyperconverged Infrastructure)?",
-      options: [
-        "Att servrar har fler än 64 CPU-kärnor",
-        "En arkitektur där beräkning (CPU), minne, lagring och nätverk virtualiseras och samlas i en gemensam mjukvarustyrd plattform",
-        "Att man uteslutande använder externa USB-hårddiskar",
-        "Att köra operativsystem direkt från internet"
-      ],
-      answer: 1,
-      exp: "HCI (t.ex. Nutanix eller VMware vSAN) eliminerar separata SAN-lagringsnät genom att mjukvarustyrt slå ihop lokal lagring i servernoderna."
-    },
-    {
-      q: "Vad är den främsta risken med att använda opatchade 'Golden Images' / mallar vid driftsättning av virtuella servrar?",
-      options: [
-        "Att servern inte kan startas",
-        "Att alla nya maskiner som rullas ut automatiskt ärver kända sårbarheter från mallens ursprungliga skapandedatum",
-        "Att hårddiskarna slits ut i förtid",
-        "Att nätverkskorten byter MAC-adress varje timme"
-      ],
-      answer: 1,
-      exp: "Om VM-mallar inte hålls uppdaterade med de senaste säkerhetsuppdateringarna driftsätts nya system med kända sårbarheter direkt i produktionsmiljön."
-    },
-    {
-      q: "Vad innebär termen 'Role-Based Access Control' (RBAC) i en virtualiseringsplattform?",
-      options: [
-        "Att alla i IT-teamet har rot-behörighet för att snabba på arbetet",
-        "Att behörigheter tilldelas utifrån användarens specifika arbetsroll för att begränsa obehörig åtkomst",
-        "Att servern tilldelar roller slumpmässigt",
-        "Att inloggning sker med engångskoder via SMS"
-      ],
-      answer: 1,
-      exp: "RBAC säkerställer principen om minsta behörighet (Least Privilege) vid hantering av servrar, datalagring och virtuella nätverk."
-    },
-    {
-      q: "Vad avses med 'Failover' i en klustrad servermiljö?",
-      options: [
-        "Att ett fel loggas i operativsystemets felrapport",
-        "En automatisk process där arbetsbördan flyttas över till en reservnod när en primär serverkomponent slutar fungera",
-        "Att servern låser sig för att skydda minnet",
-        "Att administratören får ett SMS om fel"
-      ],
-      answer: 1,
-      exp: "Failover garanterar att tjänster fortsätter att levereras med minimalt eller inget avbrott trots hårdvaruhaveri."
-    },
-    {
-      q: "Vad innebär 'Bare-metal Restore' vid haveriåterställning?",
-      options: [
-        "Att polera serverchassit innan återställning",
-        "Att återställa ett komplett system direkt till ren hårdvara utan att ett operativsystem först måste installeras manuellt",
-        "Att endast återställa textfiler via terminalen",
-        "Att byta ut processorerna mot nya modeller"
-      ],
-      answer: 1,
-      exp: "Bare-metal recovery återskapar hela systemet inklusive operativsystem, drivrutiner, konfiguration och applikationsdata på en tom maskin."
-    },
-    {
-      q: "Vad är ett 'Heartbeat' i ett högtiillgänglighetskluster?",
-      options: [
-        "En kontinuerlig signal som skickas mellan klusternoderna för att bekräfta att varje nod lever och fungerar",
-        "Fläktarnas hastighetsreglering",
-        "CPU:ns klockfrekvens under belastning",
-        "Övervakning av administratörens tangentbordsaktivitet"
+        "Kontinuerlig verifiering via checksummor mot tyst datakorruption samt inbyggda snapshots",
+        "Automatisk kompilering av skadlig kod till harmlösa textfiler direkt vid skrivning",
+        "Stöd för äldre FAT16-partitioner utan krav på uppgradering av lagringsdiskar",
+        "Hårdvarubaserad brandväggsfiltrering integrerad direkt i partitionstabellen"
       ],
       answer: 0,
-      exp: "Om hjärtslagsignalen uteblir antar de övriga noderna att maskinen kraschat och initierar omedelbart failover."
+      exp: "ZFS skyddar mot 'bit rot' med hjälp av kontrollsummor, copy-on-write, inbyggd RAID och ögonblicksbilder (snapshots)."
     },
     {
-      q: "Vad innebär begreppet 'Split-Brain' i ett serverkluster och hur förhindras det?",
+      q: "Vad kännetecknar en s.k. 'Warm Site' inom ramen för katastrofåterställning?",
       options: [
-        "Att en processor har två kärnor",
-        "Att noderna tappar kontakten med varandra och båda tror att den andra är död, vilket förhindras med quorum-vittnen (Quorum)",
-        "Att två administratörer loggar in samtidigt",
-        "Att hårddiskarna delas upp i två partioner"
-      ],
-      answer: 1,
-      exp: "Quorum och vittnesdiskar säkerställer att endast den nod som har majoritetsröst får hantera delade resurser, vilket skyddar mot datakorruption."
-    },
-    {
-      q: "Vad är syftet med 'Syslog' och centraliserad logghantering i en IT-infrastruktur?",
-      options: [
-        "Att spara loggar lokalt så att ingen annan kan se dem",
-        "Att samla alla systemloggar på en säker server för att förhindra manipulation och förenkla incidentanalys",
-        "Att radera loggar varje dygn för att spara diskyta",
-        "Att övervaka administratörens skärm"
-      ],
-      answer: 1,
-      exp: "Centraliserad loggning skyddar loggdata mot att raderas eller manipuleras av en angripare som lyckats ta över en enskild server."
-    },
-    {
-      q: "Vad innebär 'Hot Swapping' av komponenter i en företagsserver?",
-      options: [
-        "Att komponenten kan bytas ut medan systemet är igång och i full drift utan att servern behöver stängas av",
-        "Att komponenten värms upp innan montering",
-        "Att komponenten kyls med flytande kväve",
-        "Att bytet måste utföras inom 10 sekunder"
+        "En reservmiljö med hårdvara och nätverk på plats, där färsk data måste läsas in före driftstart",
+        "En fullt synkroniserad sekundär miljö som tar över driften inom bråkdelen av en sekund",
+        "Enbart en tom lokal med el och kyla utan installerad server- eller nätverksutrustning",
+        "Ett externt bergrum där magnetband förvaras utan någon form av nätverksanslutning"
       ],
       answer: 0,
-      exp: "Hot-swap på hårddiskar, fläktar och nätdelar möjliggör hårdvaruunderhåll och reparationer utan driftstopp."
+      exp: "En Warm Site har servrar och nätverk förberedda, men produktionsdata måste återställas från backup innan drift kan återupptas."
     },
     {
-      q: "Vad är det primära syftet med regelbunden 'Återställningstestning' (Disaster Recovery Testing) av backuper?",
+      q: "Vad är den tekniska innebörden av blockdeduplicering vid backuphantering?",
       options: [
-        "Att kontrollera att hårddiskarna snurrar tyst",
-        "Att bekräfta att backuperna faktiskt går att läsa in, är intakta och att verksamhetens RTO- och RPO-mål kan uppnås",
-        "Att öka överföringshastigheten på nätverket",
-        "Att förnya licensen för backupmjukvaran"
+        "Att identiska datablock identifieras och enbart sparas en gång på lagringsmediet",
+        "Att data krypteras två gånger med olika matematiska algoritmer före överföring",
+        "Att filnamn anonymiseras och ersättas med slumpmässiga hexadecimala strängar",
+        "Att datafragment automatiskt flyttas till snabbare SSD-enheter vid återställning"
       ],
-      answer: 1,
-      exp: "En backup som aldrig har testats för återställning kan inte garantera säkerhet; tester bekräftar att data är felfri och att rutinen fungerar."
+      answer: 0,
+      exp: "Deduplicering sparar lagringsutrymme genom att lagra unika block en enda gång och ersätta upprepningar med pekare."
+    },
+    {
+      q: "Vad innebär mikrosegmentering i ett mjukvarudefinierat datacenter (SDN)?",
+      options: [
+        "Att säkerhetspolicyer och brandväggsregler appliceras granulärt på varje enskild virtuell maskin",
+        "Att minska storleken på datapaketens MTU för att minimera risken för fragmentering",
+        "Att dela upp fysiska switchar i mindre elektroniska moduler för att spara ström",
+        "Att begränsa antalet tillåtna användarsessioner till högst tio per applikationsserver"
+      ],
+      answer: 0,
+      exp: "Mikrosegmentering isolerar arbetsbördor från varandra på VM-nivå och stoppar hot från att sprida sig lateralt inom nätverket."
+    },
+    {
+      q: "Vilken funktion fyller Out-of-Band Management (t.ex. IPMI, iDRAC, iLO) på en server?",
+      options: [
+        "Fjärrhantering av hårdvara och strömstatus oberoende av serveroperativsystemets tillstånd",
+        "Dynamisk överklockning av processorerna när arbetsbördan överskrider normala tröskelvärden",
+        "Automatisk säkerhetskopiering av lokala gästmaskiner direkt till en publik molntjänst",
+        "Hårdvarubaserad paritetskontroll över nätverkskablarnas fysiska partvinnade ledare"
+      ],
+      answer: 0,
+      exp: "Out-of-band-system ger dedikerad nätverksåtkomst till konsol, bios och strömbrytare även om huvudoperativsystemet kraschat."
+    },
+    {
+      q: "Vad är syftet med kontinuerlig kapacitetsplanering (Capacity Planning)?",
+      options: [
+        "Att analysera resursutnyttjande och trender för att proaktivt dimensionera framtida behov",
+        "Att kontrollera att serverchassits fysiska dimensioner överensstämmer med rackstandarden",
+        "Att manuellt fördela IP-adresser till nyanställda användare inom organisationen",
+        "Att fastställa maximalt antal tillåtna e-postmeddelanden per anställd och dygn"
+      ],
+      answer: 0,
+      exp: "Kapacitetsplanering förhindrar flaskhalsar genom att i god tid förutse när CPU, minne, nätverk eller lagring behöver expanderas."
+    },
+    {
+      q: "Vad är skillnaden mellan en inkrementell och en differentiell säkerhetskopiering?",
+      options: [
+        "Inkrementell sparar ändringar sedan senaste backup oavsett typ; differentiell sparar sedan senaste fulla backup",
+        "Differentiell kopierar enbart databasfiler medan inkrementell uteslutande hanterar systemfiler",
+        "Inkrementell kräver dubbelt så mycket lagringsutrymme vid varje separat körtillfälle",
+        "Differentiell raderar källfilerna från produktionsservern så snart verifieringen är klar"
+      ],
+      answer: 0,
+      exp: "Inkrementell sparar ändringar sedan föregående backup oavsett typ; differentiell sparar allt som ändrats sedan den senaste fullständiga backupen."
+    },
+    {
+      q: "Vad särskiljer en containerarkitektur (t.ex. Docker) från traditionella virtuella maskiner?",
+      options: [
+        "Containers delar värdens operativsystemkärna och kräver inget eget fullständigt gäst-OS",
+        "Containers kräver alltid en Typ 1-hypervisor för att kunna starta och exekvera applikationer",
+        "Containers tillhandahåller full hårdvaruemulering av BIOS, grafikkort och moderkort",
+        "Containers kan enbart exekveras på hårdvara som saknar hårdvaruassisterad virtualisering"
+      ],
+      answer: 0,
+      exp: "Containers virtualiserar på operativsystemnivå och delar värdkärnan, vilket gör dem resurssnålare och snabbare än virtuella maskiner."
+    },
+    {
+      q: "Hur kombinerar RAID 10 (1+0) egenskaper från andra RAID-nivåer?",
+      options: [
+        "Genom att kombinera striping för prestanda (RAID 0) med spegling för feltolerans (RAID 1)",
+        "Genom att distribuera dubbel paritet över minst fem separata diskenheter i systemet",
+        "Genom att komprimera blockdata i realtid med hjälp av en dedikerad ASIC-kontroller",
+        "Genom att växla mellan aktiv och passiv lagring beroende på dygnets belastning"
+      ],
+      answer: 0,
+      exp: "RAID 10 speglar data (RAID 1) och stripar dem sedan över flera diskar (RAID 0) för att ge både hög felredundans och snabb I/O."
+    },
+    {
+      q: "Vad innebär 'Configuration Drift' i en serverinfrastruktur?",
+      options: [
+        "Att servrars inställningar gradvis avviker från ursprungskonfigurationen på grund av manuella ändringar",
+        "Att systemklockor drar sig ur synk på grund av instabila kristaller på moderkortet",
+        "Att den fysiska lagringen långsamt degraderas till följd av elektromagnetiska fält",
+        "Att virtuella switchar byter IP-adresser dynamiskt vid periodiska omstarter"
+      ],
+      answer: 0,
+      exp: "Configuration drift uppstår när servrar modifieras manuellt över tid utan versionshantering, vilket leder till inkonsekvens och säkerhetsluckor."
+    },
+    {
+      q: "Varför är tidssynkronisering med NTP kritiskt i en domän- och serverinfrastruktur?",
+      options: [
+        "För att autentiseringsprotokoll (t.ex. Kerberos), certifikat och logganalys kräver synkade klockor",
+        "För att switchar annars stänger av sina nätverksportar för att spara elenergi på natten",
+        "För att förhindra att datakablarna överhettas vid asynkrona pakettransporter",
+        "För att användarnas grafiska gränssnitt ska visa rätt tidszon i webbläsaren"
+      ],
+      answer: 0,
+      exp: "Kerberos-autentisering tolererar vanligen max 5 minuters tidsavvikelse, och korrekt incidentutredning förutsätter identiska tidsstämplar i alla loggar."
+    },
+    {
+      q: "Vilket skydd ger redundanta nätaggregat (Dual Power Supplies) i en rackserver?",
+      options: [
+        "Skydd mot haveri i ett aggregat samt möjlighet att ansluta till skilda elmatningar/UPS-källor",
+        "Att serverns beräkningskapacitet automatiskt fördubblas under timmar med hög driftlast",
+        "Att interna komponenter kyls med dubbel fläkthastighet vid eventuell överhettning",
+        "Att servern kan fortsätta drivas via PoE (Power over Ethernet) om strömmen bryts"
+      ],
+      answer: 0,
+      exp: "Dubbla nätaggregat skyddar mot intern komponentkollaps och tillåter anslutning till två oberoende strömbanor."
+    },
+    {
+      q: "Vad definierar en 'Air-Gapped' säkerhetskopia?",
+      options: [
+        "En lagringskopia som är helt fysiskt eller logiskt isolerad från alla nätverksanslutningar",
+        "En säkerhetskopia som kyls med trycksatt luft för att förhindra överhettning av lagringsmediet",
+        "Ett molnbaserat arkiv som synkroniseras via okrypterade trådlösa punkt-till-punkt-länkar",
+        "En lagringsvolym som är permanent ansluten till hypervisorns hanteringsgränssnitt"
+      ],
+      answer: 0,
+      exp: "Ett air-gap innebär total avsaknad av nätverkskoppling till backupen, vilket omöjliggör angrepp och radering via nätet."
+    },
+    {
+      q: "Vad är kärnan i en hyperkonvergerad infrastruktur (HCI)?",
+      options: [
+        "Beräkning, lagring och nätverk virtualiseras och körs integrerat på standardiserade x86-noder",
+        "Separata hårdvarusystem för beräkning och lagring som länkas via proprietära optiska bussar",
+        "Att samtliga arbetsbördor uteslutande exekveras i publika fleranvändarmoln",
+        "Att servrar saknar internt RAM-minne och istället förlitar sig på externa NVMe-diskar"
+      ],
+      answer: 0,
+      exp: "HCI integrerar CPU, virtualisering och mjukvarudefinierad lagring (t.ex. vSAN, Nutanix) i samma standardnoder utan traditionella externa SAN."
+    },
+    {
+      q: "Vilken är den största risken med att driftsätta virtuella maskiner från opatchade mallar (Golden Images)?",
+      options: [
+        "Att nya maskiner omedelbart exponeras med kända och exploaterbara sårbarheter vid start",
+        "Att lagringsvolymen formateras med ett filsystem som inte stödjer långa filnamn",
+        "Att serverns hårdvarukomponenter degraderas mekaniskt under själva kloningsprocessen",
+        "Att nätverkskorten förlorar sina hårdvarubaserade MAC-adresser vid omstart"
+      ],
+      answer: 0,
+      exp: "Om grundavbildningar inte patchas regelbundet rullas nya servrar ut i produktion med kända säkerhetsbrister."
+    },
+    {
+      q: "Hur tillämpas Role-Based Access Control (RBAC) i en virtualiseringsplattform?",
+      options: [
+        "Behörigheter knyts till specifika roller snarare än att ge breda administrativa rättigheter direkt",
+        "Samtliga användare tilldelas temporära fullständiga rot-behörigheter vid inloggning",
+        "Åtkomst beviljas dynamiskt baserat på vilken fysisk nätverkskabel administratören ansluter",
+        "Systemet slumpmässigt roterar säkerhetsbehörigheterna mellan teknikerna varje månad"
+      ],
+      answer: 0,
+      exp: "RBAC säkerställer principen om minsta behörighet (Least Privilege) genom att tilldela användare rättigheter utifrån deras arbetsroll."
+    },
+    {
+      q: "Vad innebär termen 'Failover' i en klustrad servermiljö?",
+      options: [
+        "Automatisk överföring av tjänster eller virtuella maskiner till en reservnod vid hårdvaruhaveri",
+        "Att systemet avbryter samtliga aktiva processer för att skriva en minnesdump till disken",
+        "En manuell omstart av samtliga nätverksswitchar för att rensa ARP-tabellerna",
+        "Att lagringskontrollern växlar från synkron till asynkron datareplikering vid hög last"
+      ],
+      answer: 0,
+      exp: "Failover innebär att en sekundär nod automatiskt och sömlöst tar över driften om den primära noden fallerar."
+    },
+    {
+      q: "Vad innebär en 'Bare-Metal Restore'?",
+      options: [
+        "Fullständig systemåterställning direkt till ren hårdvara utan förinstallerat operativsystem",
+        "Fysisk rengöring och montering av serverns interna kretskort efter en brandincident",
+        "Extrahering av enskilda textfiler från en komprimerad arkivfil via kommandotolken",
+        "Återställning av firmware i en nätverksswitch med hjälp av en seriell konsolkabel"
+      ],
+      answer: 0,
+      exp: "Bare-metal recovery återställer ett fullständigt system (OS, konfiguration, program och data) till en helt tom maskin."
+    },
+    {
+      q: "Vad är syftet med en 'Heartbeat'-signal i ett högtillgänglighetskluster?",
+      options: [
+        "Att noderna kontinuerligt verifierar varandras tillgänglighet för att upptäcka haverier",
+        "Att reglera processorernas fläkthastighet baserat på chassits interna temperatur",
+        "Att mäta den faktiska bandbredden mellan primär brandvägg och internetleverantören",
+        "Att synkronisera tidsstämplar på transaktionsloggar mellan oberoende databaser"
+      ],
+      answer: 0,
+      exp: "Heartbeat är en återkommande signal mellan klusternoder. Uteblir signalen initieras failover då noden antas ha kraschat."
+    },
+    {
+      q: "Vad innebär 'Split-Brain' i ett kluster och hur förhindras det?",
+      options: [
+        "Att noder tappar kontakt och båda agerar primär nod; det förhindras med Quorum-mekanismer",
+        "Att en servernod har två processorer som försöker exekvera samma programinstruktion samtidigt",
+        "Att minnesbussen delar upp datatrafiken över två kanaler vilket orsakar minneskorruption",
+        "Att administratörer loggar in med motstridiga rättigheter via två separata terminaler"
+      ],
+      answer: 0,
+      exp: "Om klusternoder tappar kontakten med varandra riskerar båda att tro att den andra är död (split-brain). En Quorum-vittnesmekanism avgör vilken sida som har majoritet och får fortsätta."
+    },
+    {
+      q: "Varför används centraliserad logghantering (t.ex. Syslog/SIEM) i en IT-infrastruktur?",
+      options: [
+        "För att säkra loggarna mot manipulering/radering vid intrång och underlätta analys",
+        "För att automatiskt radera loggar äldre än 24 timmar så att inte serverdiskarna fylls",
+        "För att ersätta interna brandväggar med automatisk paketfiltrering på klientsidan",
+        "För att kryptera användarnas e-postmeddelanden innan de når mottagarens server"
+      ],
+      answer: 0,
+      exp: "Central logginsamling skyddar beviskedjan vid incidenter; en angripare som tar över en server kan inte radera spåren i det centrala systemet."
+    },
+    {
+      q: "Vad innebär funktionen 'Hot-Swapping' av hårdvarukomponenter?",
+      options: [
+        "Att komponenter kan bytas ut under full drift utan att servern behöver stängas av",
+        "Att komponenten förvärms till arbetstemperatur innan den monteras i chassit",
+        "Att hårdvaran automatiskt stängs av när temperaturen i serverrummet blir för hög",
+        "Att servern omedelbart växlar över beräkningar till reservprocessorer vid fel"
+      ],
+      answer: 0,
+      exp: "Hot-swap tillåter utbyte av felaktiga diskar, fläktar eller nätaggregat medan servern fortsätter leverera tjänster utan driftstopp."
+    },
+    {
+      q: "Varför är regelbunden återställningstestning nödvändig för en fungerande backupstrategi?",
+      options: [
+        "För att bekräfta att data är felfri och att återställningen klarar uppsatta RTO- och RPO-mål",
+        "För att säkerställa att backupbanden slits jämnt över hela magnetbandets längd",
+        "För att förhindra att serverns hårddiskar fragmenteras vid kontinuerlig skrivning",
+        "För att tillverkaren av backupmjukvaran kräver det för att garantin ska gälla"
+      ],
+      answer: 0,
+      exp: "En backup som inte har testats kan inte garantera verksamhetens fortlevnad; återställningstester säkerställer dataintegritet och tränar organisationen."
     }
   ];
 
@@ -656,12 +656,32 @@
     $('setup-card').classList.remove('hidden');
   }
 
+  // Fisher-Yates-slumpning för svarsalternativen
+  function shuffleOptions(question) {
+    const indices = question.options.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    return {
+      q: question.q,
+      options: indices.map(i => question.options[i]),
+      answer: indices.indexOf(question.answer),
+      exp: question.exp
+    };
+  }
+
   $('brand-logo').onclick = resetToHome;
 
   $('start-btn').onclick = () => {
     const requestedCount = parseInt($('count').value, 10);
 
-    activeQuestions = [...questionPool].sort(() => 0.5 - Math.random()).slice(0, requestedCount);
+    // Slumpa frågorna och slumpa alternativen inuti varje fråga
+    activeQuestions = [...questionPool]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, requestedCount)
+      .map(q => shuffleOptions(q));
+
     currentIndex = 0;
     score = 0;
 
