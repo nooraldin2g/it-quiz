@@ -1,31 +1,27 @@
-# AI Study Pro
+# AI Quiz – IT-infrastruktur
 
-Responsiv svensk quiz-app för IT och nätverksteknik.
+En interaktiv webbapplikation för självstudier och repetition inför kunskapskontroll i kursen **IT-infrastruktur** (25 YH-poäng).
 
-## Kör lokalt
-1. Installera Node.js 18 eller senare.
-2. Öppna en terminal i mappen `ai-study-pro`.
-3. Kör `npm start`.
-4. Öppna `http://localhost:3000` i webbläsaren.
+🌐 **Testa quizet här:** [https://nooraldin2g.github.io/it-quiz/](https://nooraldin2g.github.io/it-quiz/)
 
-Appen fungerar utan API-nyckel med inbyggda frågor. Dessa är en begränsad demobank; vid längre quiz kan frågor återkomma och svårighetsgrad påverkar endast AI-läget.
+---
 
-## Aktivera AI-genererade frågor
-Sätt miljövariabeln `OPENAI_API_KEY` på servern och starta om appen.
+## 📖 Om projektet
 
-macOS/Linux:
-```bash
-export OPENAI_API_KEY="din-nyckel"
-npm start
-```
+Detta quiz är utvecklat som ett studieverktyg för IT-säkerhetstekniker. Frågebatteriet består av 50 flervalsfrågor framtagna med stöd av generativ AI och därefter manuellt granskade, faktakorrigerade och anpassade mot kursplanens lärandemål.
 
-Windows PowerShell:
-```powershell
-$env:OPENAI_API_KEY="din-nyckel"
-npm start
-```
+### Moment som täcks:
+- **Virtualisering:** Typ 1 & Typ 2 hypervisors, PC-, server-, data- och applikationsvirtualisering samt containers (KVM, cgroups).
+- **Hårdvara & Resursfördelning:** Allokering av CPU/minne, Thin vs. Thick Provisioning, Out-of-band management (iDRAC/iLO) och kapacitetsplanering.
+- **Säkerhetskopiering & Kontinuitet:** 3-2-1-regeln, RPO, RTO, oföränderliga backuper (Immutable/WORM), snapshots vs. backup och Air-gapping.
+- **Högtillgänglighet & Infrastruktur:** Kluster, failover, delad lagring (SAN), Quorum/Split-Brain, redundans och ZFS.
+- **Sårbarheter & Historik:** Hypervisor Escape, sidokanalsangrepp (Spectre/Meltdown), nätverkssegmentering, Micro-Partitioning (PowerVM) samt IT-arkitekturens historiska utveckling (IBM).
 
-Servern använder OpenAI API och modellen `gpt-4o-mini` som standard. Modell kan ändras via `OPENAI_MODEL`. API-användning kan kosta pengar. Lägg aldrig API-nyckeln i `index.html` eller i ett publikt kodförråd.
+---
 
-## Publicering
-Appen kräver en Node.js-server. Publicera projektet hos en värd som stöder Node.js och konfigurera API-nyckeln som hemlig miljövariabel. Resultat sparas bara i respektive webbläsares localStorage, inte på servern.
+## ⚙️ Hur applikationen fungerar
+
+- **Ren klientsida:** Hela applikationen körs direkt i webbläsaren via en statisk fil (`index.html`) hostad på GitHub Pages. Ingen backend eller databas krävs.
+- **Dynamisk slumpning:** Både frågeurvalet och svarsalternativen slumpas automatiskt med Fisher-Yates-algoritmen vid varje start för att motverka mönsterinlärning.
+- **Omedelbar återkoppling:** Varje fråga rättas direkt med en pedagogisk förklaring till det korrekta svaret.
+- **Valbart antal frågor:** Möjlighet att välja mellan 10, 20, 30, 40 eller samtliga 50 frågor per session.
