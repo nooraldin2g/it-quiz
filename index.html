@@ -46,21 +46,21 @@
 <main>
   <header>
     <div class="brand">✦ AI <span>Study Pro</span></div>
-    <div class="badge">IT • Nätverk</div>
+    <div class="badge">IT • TUC Kurs</div>
   </header>
 
   <div class="hero">
     <h1>Lär dig smartare.</h1>
-    <p>Träna nätverksteknik och IT med quiz, automatisk rättning och förklaringar.</p>
+    <p>Träna IT-infrastruktur och säkerhet med automatisk rättning och tydliga förklaringar.</p>
   </div>
 
   <div id="setup-card" class="card">
     <h2>Starta ett nytt quiz</h2>
     <label>Ämne</label>
     <select id="topic">
-      <option value="all">Alla ämnen (Blandat)</option>
-      <option value="infra">IT-infrastruktur & Protokoll</option>
-      <option value="sec">IT-säkerhet & Nätverk</option>
+      <option value="all">Alla ämnen (Blandat - 50 frågor)</option>
+      <option value="infra">Nätverk & Nätverksinfrastruktur</option>
+      <option value="sec">IT-infrastruktur & Säkerhet (TUC Kursplan)</option>
     </select>
 
     <label>Antal frågor</label>
@@ -92,76 +92,78 @@
 
 <script>
   const questionPool = [
-    // --- IT-INFRASTRUKTUR (25 frågor) ---
+    // ==========================================
+    // GRUPP 1: NÄTVERK & INFRASTRUKTUR (25 frågor)
+    // ==========================================
     {
       topic: "infra",
       q: "Vilket protokoll ansvarar för att automatiskt tilldela IP-adresser på ett lokalt nätverk?",
       options: ["DNS", "DHCP", "ARP", "BGP"],
       answer: 1,
-      exp: "DHCP (Dynamic Host Configuration Protocol) delar ut dynamiska IP-adresser till enheter på nätverket."
+      exp: "DHCP delar ut dynamiska IP-adresser automatiskt till anslutna enheter."
     },
     {
       topic: "infra",
       q: "Vilket skikt i OSI-modellen hanterar routning och logisk adressering (t.ex. IP)?",
       options: ["Skikt 2 (Datalänk)", "Skikt 3 (Nätverk)", "Skikt 4 (Transport)", "Skikt 7 (Applikation)"],
       answer: 1,
-      exp: "Skikt 3 (Nätverksskiktet) ansvarar för logisk adressering via IP och routning mellan skilda nätverk."
+      exp: "Skikt 3 (Nätverksskiktet) ansvarar för logisk adressering och paketroutning."
     },
     {
       topic: "infra",
       q: "Vilket portnummer används som standard för okrypterad HTTP-trafik?",
       options: ["22", "53", "80", "443"],
       answer: 2,
-      exp: "Port 80 är standardporten för okrypterad HTTP-trafik."
+      exp: "Port 80 är standardporten för okrypterad HTTP."
     },
     {
       topic: "infra",
       q: "Vad gör en DNS-server på ett nätverk?",
       options: ["Krypterar datapaket", "Översätter domännamn till IP-adresser", "Skyddar mot skadlig kod", "Hanterar DHCP-pooler"],
       answer: 1,
-      exp: "DNS (Domain Name System) översätter läsbara domännamn (t.ex. example.com) till numeriska IP-adresser."
+      exp: "DNS översätter läsbara domännamn till maskinläsbara IP-adresser."
     },
     {
       topic: "infra",
       q: "Vilket protokoll garanterar att datapaket levereras i ordning och felfritt (connection-oriented)?",
       options: ["UDP", "ICMP", "TCP", "IGMP"],
       answer: 2,
-      exp: "TCP (Transmission Control Protocol) säkerställer pålitlig och sekvenserad överföring genom kvittens."
+      exp: "TCP säkerställer pålitlig och sekvenserad överföring genom handskakning och kvittens."
     },
     {
       topic: "infra",
       q: "Hur många bitar består en IPv4-adress av?",
       options: ["16 bitar", "32 bitar", "64 bitar", "128 bitar"],
       answer: 1,
-      exp: "En IPv4-adress är 32 bitar lång och skrivs med fyra decimala tal (oktetter), t.ex. 192.168.1.1."
+      exp: "En IPv4-adress består av 32 bitar uppdelade i 4 oktetter."
     },
     {
       topic: "infra",
       q: "Hur många bitar består en IPv6-adress av?",
       options: ["32 bitar", "64 bitar", "128 bitar", "256 bitar"],
       answer: 2,
-      exp: "En IPv6-adress är 128 bitar lång och skrivs i hexadecimal form."
+      exp: "En IPv6-adress är 128 bitar lång och skrivs i hexadecimal notation."
     },
     {
       topic: "infra",
       q: "Vilken typ av nätverksenhet arbetar huvudsakligen på OSI-skikt 2 (Datalänk)?",
       options: ["Router", "Switch", "Brandvägg", "Repeater"],
       answer: 1,
-      exp: "En nätverksswitch vidarebefordrar dataramar baserat på hårdvaruadresser (MAC-adresser) på skikt 2."
+      exp: "En switch vidarebefordrar dataramar baserat på fysiska MAC-adresser på skikt 2."
     },
     {
       topic: "infra",
       q: "Vilket protokoll används av kommandot 'ping' för att kontrollera nätverkskontakt?",
       options: ["ICMP", "IGMP", "SNMP", "ARP"],
       answer: 0,
-      exp: "ICMP (Internet Control Message Protocol) skickar Echo Request och svarar med Echo Reply vid ping."
+      exp: "ICMP skickar Echo Request och tar emot Echo Reply vid nätverkstester som ping."
     },
     {
       topic: "infra",
       q: "Vad kallas den fysiska hårdvaruadress som finns inbyggd i ett nätverkskort?",
       options: ["IP-adress", "MAC-adress", "Subnätmask", "Gateway"],
       answer: 1,
-      exp: "MAC-adressen (Media Access Control) är en unik 48-bitars identifierare för ett fysiskt nätverkskort."
+      exp: "MAC-adressen är den unika 48-bitars hårdvaruadressen för ett nätverksgränssnitt."
     },
     {
       topic: "infra",
@@ -175,275 +177,278 @@
       q: "Vad används en subnätmask till vid IP-konfiguration?",
       options: ["Avgör vilken del som är nätverks-ID och värd-ID", "Krypterar anslutningen", "Döljer den externa IP-adressen", "Styr brandväggens regler"],
       answer: 0,
-      exp: "Subnätmasken definierar gränsen mellan nätverksdelen och värddelen i en given IP-adress."
+      exp: "Subnätmasken definierar gränsen mellan nätverksdelen och värddelen i en IP-adress."
     },
     {
       topic: "infra",
       q: "Vilket protokoll översätter en känd IP-adress till dess fysiska MAC-adress på ett lokalt nät?",
       options: ["ARP", "RARP", "NAT", "BGP"],
       answer: 0,
-      exp: "ARP (Address Resolution Protocol) mappar en logisk IPv4-adress mot en fysisk MAC-adress."
+      exp: "ARP mappar en logisk IPv4-adress mot en fysisk hårdvaruadress (MAC)."
     },
     {
       topic: "infra",
       q: "Vad är standardporten för HTTPS (krypterad webbtrafik)?",
       options: ["80", "8080", "443", "8443"],
       answer: 2,
-      exp: "Port 443 används för säker webbtrafik krypterad med TLS/SSL."
+      exp: "Port 443 används för TLS/SSL-krypterad webbtrafik."
     },
     {
       topic: "infra",
       q: "Vilket transportprotokoll är snabbast och saknar kvittenser (connectionless)?",
       options: ["TCP", "UDP", "SCTP", "FTP"],
       answer: 1,
-      exp: "UDP (User Datagram Protocol) skickar data utan att vänta på bekräftelse, lämpligt för video och röstsamtal."
+      exp: "UDP skickar datagram direkt utan handskakning eller omsändningar, vilket minimerar latens."
     },
     {
       topic: "infra",
       q: "Vad kallas nätverkstopologin där alla enheter är direkt anslutna till en central switch?",
       options: ["Ringtopologi", "Bustopologi", "Stjärntopologi", "Mesh-topologi"],
       answer: 2,
-      exp: "I en stjärntopologi kopplas varje nod individuellt till en central distributionspunkt som en switch."
+      exp: "I en stjärntopologi är varje enskild nod ansluten till en central punkt."
     },
     {
       topic: "infra",
       q: "Vilket portnummer används som standard av DNS?",
       options: ["21", "25", "53", "110"],
       answer: 2,
-      exp: "DNS lyssnar normalt på port 53 (både UDP och TCP)."
+      exp: "Port 53 är standardporten för namnservrar (DNS)."
     },
     {
       topic: "infra",
       q: "Vad står förkortningen 'VLAN' för?",
       options: ["Virtual Local Area Network", "Variable Line Access Node", "Verified Link Authentication Network", "Virtual Link Access Network"],
       answer: 0,
-      exp: "VLAN (Virtual Local Area Network) delar upp ett fysiskt nätverk i flera logiska och isolerade nätverk."
+      exp: "VLAN delar in ett fysiskt nätverk i flera logiska och isolerade broadcast-domäner."
     },
     {
       topic: "infra",
-      q: "Vad är den teoretiska maxlängden för en standard Cat6 TP-kabel för 1 Gbps/10 Gbps Ethernet?",
+      q: "Vad är den teoretiska maxlängden för en standard Cat6 TP-kabel för 1 Gbps Ethernet?",
       options: ["50 meter", "100 meter", "250 meter", "500 meter"],
       answer: 1,
-      exp: "Maximal rekommenderad längd för partvinnad kopparkabel enligt Ethernet-standarden är 100 meter."
+      exp: "Standarden specificerar en maximal kanallängd på 100 meter för partvinnad kopparkabel."
     },
     {
       topic: "infra",
       q: "Vilket protokoll används för att skicka e-post mellan servrar över internet?",
       options: ["IMAP", "POP3", "SMTP", "SNMP"],
       answer: 2,
-      exp: "SMTP (Simple Mail Transfer Protocol) används för utgående och vidarebefordrad e-post."
+      exp: "SMTP används för att sända och reläa utgående e-post över port 25 eller 587."
     },
     {
       topic: "infra",
-      q: "Vilket protokoll används för övervakning och administration av nätverksenheter (t.ex. routrar och switchar)?",
+      q: "Vilket protokoll används för övervakning och administration av nätverksenheter?",
       options: ["SNMP", "NTP", "TFTP", "LDAP"],
       answer: 0,
-      exp: "SNMP (Simple Network Management Protocol) samlar in statistik och larm från nätverksutrustning."
+      exp: "SNMP hämtar driftstatus, mätvärden och skickar larm (traps) från nätverksutrustning."
     },
     {
       topic: "infra",
       q: "Vilket protokoll synkroniserar klockan på servrar och nätverksenheter?",
       options: ["PTP", "NTP", "STP", "LLDP"],
       answer: 1,
-      exp: "NTP (Network Time Protocol) synkroniserar systemklockor mot referenstidskällor över nätverket."
+      exp: "NTP synkroniserar nätverksenheters klockor mot exakta tidskällor."
     },
     {
       topic: "infra",
       q: "Vad är loopback-adressen i IPv4?",
       options: ["192.168.0.1", "10.0.0.1", "127.0.0.1", "255.255.255.255"],
       answer: 2,
-      exp: "127.0.0.1 (eller localhost) är standardadressen som refererar till den lokala enheten själv."
+      exp: "127.0.0.1 pekar tillbaka mot det lokala systemet själv."
     },
     {
       topic: "infra",
       q: "Vilket protokoll används för att förhindra loopar i switchade nätverk på skikt 2?",
       options: ["OSPF", "BGP", "STP (Spanning Tree Protocol)", "RIP"],
       answer: 2,
-      exp: "STP (Spanning Tree Protocol) inaktiverar redundanta länkar för att undvika broadcast-stormar och switch-loopar."
+      exp: "STP blockerar redundanta vägar för att förhindra broadcast-stormar."
     },
     {
       topic: "infra",
       q: "Vad innebär termen 'Default Gateway'?",
       options: ["Den router enhetens paket skickas till om målet ligger utanför det lokala nätet", "Enhetens MAC-adress", "DNS-serverns reservadress", "Den första switchporten"],
       answer: 0,
-      exp: "Default Gateway är routern som tar hand om trafik som ska vidare utanför det lokala delnätet."
+      exp: "Default Gateway är nätverksporten/routern som förmedlar trafik ut till externa nät."
     },
 
-    // --- IT-SÄKERHET & INFRASTRUKTUR (25 frågor) ---
+    // =========================================================================
+    // GRUPP 2: IT-INFRASTRUKTUR & SÄKERHET - TUC KURSPLAN (25 frågor)
+    // Moment: Virtualisering, IBM Historia, Servrar, Backup, Sårbarheter
+    // =========================================================================
     {
       topic: "sec",
-      q: "Vad kallas en cyberattack där flera datorer skickar massiv trafik mot en server för att sänka den?",
-      options: ["Phishing", "DDoS", "SQL Injection", "Man-in-the-Middle"],
+      q: "Vad innebär 'effektutvinning ur ett IT-system' enligt kursplanen?",
+      options: ["Att mäta systemets strömförbrukning i kilowatt", "Att optimera processer och utnyttjande så att IT-investeringen genererar maximal verksamhetsnytta", "Att överklocka processorerna i serverhallen", "Att öka nätverkskablarnas kapacitet"],
       answer: 1,
-      exp: "DDoS (Distributed Denial of Service) överbelastar servrar genom trafikflöden från flera enheter (botnet)."
+      exp: "Effektutvinning handlar om att organisera och nyttja IT-systemet optimalt så att det realiserar avsedd nytta och värde för verksamheten."
     },
     {
       topic: "sec",
-      q: "Vad är huvudsyftet med en brandvägg (Firewall)?",
-      options: ["Öka överföringshastigheten", "Filtrera och kontrollera in- och utgående nätverkstrafik", "Tilldela IP-adresser", "Skapa virtuella diskar"],
+      q: "Vilken historisk roll spelade IBM 7044 och dess varianter för IT-arkitektur och säkerhet?",
+      options: ["Det var världens första handhållna persondator", "Det var tidiga stordatorsystem som banade väg för multiprogrammering, batchbearbetning och tidig minnesisolering", "Det var det första trådlösa nätverket", "Det lanserade den första brandväggen"],
       answer: 1,
-      exp: "En brandvägg övervakar trafikflöden och tillåter eller blockerar paket enligt uppsatta säkerhetsregler."
+      exp: "IBM 7044 (och 7044M) var centrala stordatorsystem på 1960-talet som utvecklade arkitekturen för simultana jobb och minnesskydd mellan processer."
     },
     {
       topic: "sec",
-      q: "Vilket protokoll används för att etablera en säker, krypterad tunnel över ett öppet nätverk?",
-      options: ["FTP", "Telnet", "VPN (t.ex. IPsec/WireGuard)", "SNMP"],
-      answer: 2,
-      exp: "En VPN skapar en krypterad tunnel för att transportera känslig data säkert över öppna nätverk."
-    },
-    {
-      topic: "sec",
-      q: "Vad skiljer asymmetrisk kryptering från symmetrisk kryptering?",
-      options: ["Asymmetrisk använder två nycklar (publik och privat)", "Asymmetrisk saknar nycklar helt", "Symmetrisk är omöjlig att knäcka", "Asymmetrisk fungerar bara lokalt"],
-      answer: 0,
-      exp: "Asymmetrisk kryptering använder två matematiskt kopplade nycklar: en offentlig för kryptering och en hemlig privat för dekryptering."
-    },
-    {
-      topic: "sec",
-      q: "Vad innebär termen 'NAT' (Network Address Translation)?",
-      options: ["Översätter privata interna IP-adresser till en publik IP", "Blockerar skadliga skript", "Krypterar e-postmeddelanden", "Hanterar certifikat"],
-      answer: 0,
-      exp: "NAT gör att många interna klienter i ett privat nätverk kan dela en och samma externa publika IP-adress."
-    },
-    {
-      topic: "sec",
-      q: "Vad kallas bedrägerier där angriparen lurar användare att lämna ut lösenord via falska mejl/sidor?",
-      options: ["Phishing (Nätfiske)", "Brute Force", "Ransomware", "Trojan"],
-      answer: 0,
-      exp: "Phishing utnyttjar manipulation för att få användare att frivilligt avslöja inloggningsuppgifter."
-    },
-    {
-      topic: "sec",
-      q: "Vilken typ av skadlig kod krypterar filer och kräver en lösensumma för att låsa upp dem?",
-      options: ["Adware", "Spyware", "Ransomware", "Rootkit"],
-      answer: 2,
-      exp: "Ransomware låser/krypterar användarens system och kräver betalning för att återställa informationen."
-    },
-    {
-      topic: "sec",
-      q: "Vad innebär flerfaktorsautentisering (MFA)?",
-      options: ["Lösenordet måste bytas varje månad", "Inloggningen kräver minst två oberoende verifieringsmetoder", "Databasen speglas till två servrar", "Trafiken krypteras två gånger"],
+      q: "Vad kännetecknar IBM System p och dess PowerVM-teknik inom virtualisering?",
+      options: ["Konsumentmjukvara för Windows-appar", "Hårdvarunära logisk partitionering (LPAR) med hög tillgänglighet och mikrosegmentering av processorer", "Ett antivirusprogram för Linux", "Ett backup-skript för bandstationer"],
       answer: 1,
-      exp: "MFA kräver minst två olika faktorer, t.ex. något du vet (lösenord) och något du har (engångskod i app)."
+      exp: "IBM System p (Power Systems) använder PowerVM för LPAR, vilket möjliggör dedikerad eller delad hårdvarupartitionering med extremt hög tillförlitlighet."
     },
     {
       topic: "sec",
-      q: "Vilket säkert protokoll ersätter Telnet för fjärrstyrning via terminal över port 22?",
-      options: ["FTP", "SSH", "HTTP", "RDP"],
+      q: "Vad är skillnaden mellan en Typ 1 (Bare-metal) och Typ 2 (Hosted) hypervisor?",
+      options: ["Typ 1 installeras direkt på hårdvaran, medan Typ 2 körs som en applikation ovanpå ett underliggande OS", "Typ 2 körs direkt på moderkortet och Typ 1 i molnet", "Typ 1 stödjer bara Windows medan Typ 2 stödjer Linux", "Det finns ingen skillnad i arkitektur"],
+      answer: 0,
+      exp: "Typ 1 (t.ex. VMware ESXi, Proxmox) körs direkt mot hårdvaran för hög prestanda och säkerhet. Typ 2 (t.ex. VirtualBox) körs ovanpå ett värd-OS."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär 'PC-virtualisering' i praktiken för en IT-säkerhetstekniker?",
+      options: ["Att ersätta alla datorer med surfplattor", "Att köra isolerade gästoperativsystem lokalt på en klientdator för tester, analys eller separation av miljöer", "Att bygga om datorns moderkort", "Att ansluta skärmen trådlöst"],
       answer: 1,
-      exp: "SSH (Secure Shell) erbjuder stark kryptering för kommandoradssessioner till servrar."
+      exp: "PC-virtualisering gör att tekniker kan isolera testmiljöer, köra skadlig kod i sandlådor eller hantera flera miljöer säkert på en lokal maskin."
     },
     {
       topic: "sec",
-      q: "Vad är syftet med en DMZ (Demilitarized Zone) i ett företagsnätverk?",
-      options: ["Stänga av extern trafik helt", "Isolera externa servrar från det känsliga interna nätverket", "Lagra backupdata", "Öka bandbredden på fibernätet"],
+      q: "Vad är det huvudsakliga målet med 'applikationsvirtualisering'?",
+      options: ["Att köra program i isolerade behållare utan att integrera eller skapa konflikter i underliggande OS", "Att öka datorns RAM-minne virtuellt", "Att kompilera om all kod till assembler", "Att installera program direkt i BIOS"],
+      answer: 0,
+      exp: "Applikationsvirtualisering (t.ex. App-V eller containers) paketerar en applikation med dess beroenden så att den körs oberoende av värdsystemet."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär 'datavirtualisering' inom en modern IT-infrastruktur?",
+      options: ["Att säkerhetskopiera filer till optiska skivor", "Att integrera och ge åtkomst till data från flera källor i realtid utan att flytta den fysiskt", "Att simulera en hårddisk med papper", "Att kryptera e-postdatabaser"],
       answer: 1,
-      exp: "En DMZ placerar offentligt tillgängliga servrar i en separat zon så att ett intrång inte direkt når intranätet."
+      exp: "Datavirtualisering låter system och användare läsa och hantera data från skilda databaser och lagringsplatser via ett enda virtuellt lager."
     },
     {
       topic: "sec",
-      q: "Vad kallas en attack där en angripare i hemlighet avlyssnar eller manipulerar trafiken mellan två parter?",
-      options: ["Man-in-the-Middle (MitM)", "SQL Injection", "Cross-Site Scripting", "Zero-day"],
-      answer: 0,
-      exp: "I en Man-in-the-Middle-attack ställer sig angriparen osedd mellan sändare och mottagare."
-    },
-    {
-      topic: "sec",
-      q: "Vad innebär en 'Zero-day'-sårbarhet?",
-      options: ["En sårbarhet som har funnits i noll dagar", "En sårbarhet som är känd av angripare innan tillverkaren hunnit släppa en säkerhetsuppdatering", "Ett säkerhetshål utan skaderisk", "En bugg som raderar hårddisken direkt"],
+      q: "Vad kallas den allvarliga sårbarhet där kod i en virtuell maskin bryter sig ut och tar kontroll över hypervisorn?",
+      options: ["Buffer Overflow", "Hypervisor Escape (VM Escape)", "SQL Injection", "ARP Poisoning"],
       answer: 1,
-      exp: "En Zero-day är en sårbarhet som utvecklaren har haft 'noll dagar' på sig att lappa innan den riskerar att utnyttjas."
+      exp: "Hypervisor Escape (VM Escape) är ett kritiskt säkerhetshål där en angripare tar sig förbi isoleringen och når värdsystemet."
     },
     {
       topic: "sec",
-      q: "Vad kallas en attackmetod där programmet systematiskt testar tusentals lösenord tills rätt hittas?",
-      options: ["Social Engineering", "Brute Force-attack", "ARP Spoofing", "DNS Poisoning"],
+      q: "Vad innebär 'Hög tillgänglighet' (High Availability / HA) i en serverplattform?",
+      options: ["Att servern alltid svarar på 'ping'", "Systemdesign med redundans och automatisk redundansväxling (failover) för att minimera driftavbrott", "Att vem som helst har behörighet att logga in", "Att bandbredden är obegränsad"],
       answer: 1,
-      exp: "Brute Force innebär att man provar alla tänkbara kombinationer av tecken eller ordlistor tills man träffar rätt."
+      exp: "High Availability minimerar nertid genom feltoleranta komponenter, redundanta nät/strömförsörjning och klusterhantering."
     },
     {
       topic: "sec",
-      q: "Vilken typ av brandvägg kan inspektera innehållet i applikationslagret och identifiera känd skadlig kod (Layer 7)?",
-      options: ["Paketfiltrerande brandvägg", "Next-Generation Firewall (NGFW)", "Kretsnivågateway", "Statiskt filter"],
+      q: "Vad innebär den klassiska backup-strategin '3-2-1-regeln'?",
+      options: ["3 timmar svarstid, 2 tekniker, 1 reservserver", "3 kopior av data, på minst 2 olika medietyper, varav minst 1 lagrad off-site", "3 servrar, 2 brandväggar, 1 router", "3 lösenord, 2 användare, 1 administratör"],
       answer: 1,
-      exp: "En NGFW (Next-Generation Firewall) inspekterar hela applikationslagret och kan identifiera program, virus och intrångsförsök."
+      exp: "3-2-1-regeln stipulerar: Tre kopior av viktig data, sparat på minst två olika medier, och en kopia på en annan fysisk/geografisk plats (eller molnet)."
     },
     {
       topic: "sec",
-      q: "Vad är syftet med digitala certifikat (X.509) och TLS/SSL?",
-      options: ["Validera en webbplats identitet och möjliggöra kryptering", "Öka nätverkets uppladdningshastighet", "Dela ut lokala IP-adresser", "Skapa virtuella routrar"],
+      q: "Vad definierar begreppet RPO (Recovery Point Objective) vid haveriberedskap och backup?",
+      options: ["Den maximalt acceptabla tidsförlusten av data mätt bakåt i tiden från kraschen", "Den tid det tar att starta om servern", "Kostnaden för ny hårdvara", "Antalet tekniker som kallas in"],
       answer: 0,
-      exp: "TLS-certifikat garanterar att du ansluter till rätt server samt tillhandahåller nycklar för krypterad kommunikation."
+      exp: "RPO anger hur mycket data i tid verksamheten har råd att förlora (t.ex. max 1 timmes dataförlust om backup tas varje timme)."
     },
     {
       topic: "sec",
-      q: "Vad innebär principen om minsta behörighet (Principle of Least Privilege)?",
-      options: ["Användare ska endast ha de behörigheter som krävs för att utföra sitt arbete", "Alla användare ska ha administratörsrättigheter för enkelhetens skull", "Systemet ska ha lägsta möjliga lösenordskrav", "Endast IT-chefen får använda lösenord"],
+      q: "Vad definierar begreppet RTO (Recovery Time Objective)?",
+      options: ["Den maximala tid det får ta att återställa ett system till fungerande drift efter ett avbrott", "Hur länge en hårddisk håller", "Hur ofta backupfiler krypteras", "Tiden det tar att göra en full installation"],
       answer: 0,
-      exp: "Minsta behörighet begränsar skadan vid ett eventuellt dataintrång genom att inte ge onödiga administrativa rättigheter."
+      exp: "RTO anger hur lång tid ett driftstopp maximalt får pågå innan systemet måste vara i produktion igen."
     },
     {
       topic: "sec",
-      q: "Vad är en 'honeypot' inom IT-säkerhet?",
-      options: ["Ett falskt/sårbart system skapat för att locka och studera angripare", "En krypterad lösenordsdatabas", "Ett antivirusprogram för webbservrar", "En metod för att säkra trådlösa nätverk"],
-      answer: 0,
-      exp: "En honeypot är en avsiktligt lockande fälla som hjälper säkerhetsteam att upptäcka och analysera intrångsförsök."
-    },
-    {
-      topic: "sec",
-      q: "Vilken trådlös säkerhetsstandard är den säkraste och modernaste för Wi-Fi?",
-      options: ["WEP", "WPA", "WPA2", "WPA3"],
-      answer: 3,
-      exp: "WPA3 är den senaste säkerhetsstandarden för Wi-Fi och erbjuder kraftfullt skydd mot offline-lösenordsattacker."
-    },
-    {
-      topic: "sec",
-      q: "Vad är huvudsyftet med en SIEM-lösning (Security Information and Event Management)?",
-      options: ["Samla in och analysera loggar från hela infrastrukturen för att upptäcka hot", "Ersätta alla brandväggar och switchar", "Automatiskt skapa säkra lösenord", "Kryptera användarnas hårddiskar"],
-      answer: 0,
-      exp: "SIEM samlar in och korrelerar loggdata från nätverksenheter, servrar och klienter för att larma om misstänkta händelser."
-    },
-    {
-      topic: "sec",
-      q: "Vad är skillnaden mellan ett IDS (Intrusion Detection System) och ett IPS (Intrusion Prevention System)?",
-      options: ["IDS upptäcker och larmar, medan IPS kan blockera attacken aktivt", "IPS kan bara larma utan åtgärd", "IDS fungerar bara på trådlösa nätverk", "Det är två olika namn på samma funktion"],
-      answer: 0,
-      exp: "Ett IDS övervakar och rapporterar avvikelser, medan ett IPS sitter i trafikflödet och aktivt blockerar identifierade attacker."
-    },
-    {
-      topic: "sec",
-      q: "Vad innebär begreppet 'Social Engineering' inom datasäkerhet?",
-      options: ["Att manipulera människor för att få tillgång till skyddad information", "Att optimera databaser för sociala medier", "Att bygga nätverk baserat på sociala relationer", "Att analysera programmeringsspråk"],
-      answer: 0,
-      exp: "Social Engineering utnyttjar mänskliga svagheter som tillit eller stress istället för att hacka tekniska sårbarheter."
-    },
-    {
-      topic: "sec",
-      q: "Vad kallas en attack där skadlig kod injiceras i en databas via ett webbformulär?",
-      options: ["Cross-Site Scripting (XSS)", "SQL Injection (SQLi)", "Buffer Overflow", "DNS Spoofing"],
+      q: "Hur bidrar 'överallokering' (overcommitment) av resurser (CPU/RAM) till en sårbarhet i virtualisering?",
+      options: ["Det raderar hypervisorns certifikat", "Det kan leda till DoS (Denial of Service) och resursutmattning för alla gäster om en maskin överbelastas", "Det öppnar brandväggsportar automatiskt", "Det slår ut switcharnas MAC-tabell"],
       answer: 1,
-      exp: "SQL Injection lurar databasservern att köra godtyckliga SQL-kommandon på grund av bristande validering av användarinput."
+      exp: "Om virtuella resurser överbokas kraftigt riskerar en angripare eller process att svälta ut hypervisorns fysiska minne och CPU (resource exhaustion)."
     },
     {
       topic: "sec",
-      q: "Vad är syftet med hashfunktioner som SHA-256 inom säkerhet?",
-      options: ["Att skapa en envägs digital fingeravtryck för att verifiera dataintegritet", "Att komprimera stora filer så att de tar mindre plats", "Att tilldela krypterade IP-adresser", "Att återställa förlorade lösenord"],
-      answer: 0,
-      exp: "Hashfunktioner är envägsberäkningar som genererar en unik hash för kontroll av att data eller lösenord inte har ändrats."
+      q: "Vilken princip är viktigast vid fördelning av datorns resurser till flera simultana tillämpningar?",
+      options: ["Att ge högsta prioritet till grafikkortet", "Resursisolering och kvoter för att säkerställa att ingen enskild process sänker de andra", "Att alltid dela ut 100% av RAM-minnet till första processen", "Att stänga av schemaläggaren i kärnan"],
+      answer: 1,
+      exp: "Genom cgroups, kvoter och prioritering isoleras processer så att systemet upprätthåller rätt kapacitet och tillgänglighet under samtidig drift."
     },
     {
       topic: "sec",
-      q: "Vad betyder säkerhetsmodellen 'Zero Trust'?",
-      options: ["Lita inte automatiskt på någon eller något, varken innanför eller utanför nätverket", "Blockera all inkommande trafik från internet permanent", "Ta bort alla behörighetskrav i det interna nätverket", "Använd inga servrar från tredjepartsleverantörer"],
-      answer: 0,
-      exp: "Zero Trust bygger på principen 'aldrig lita på, alltid verifiera' oavsett varifrån anslutningen sker."
+      q: "Vad är 'Immutable Backup' (oföränderlig säkerhetskopia) och varför är det kritiskt mot ransomware?",
+      options: ["Backupfiler som raderas direkt efter skapande", "Säkerhetskopior som skrivskyddas med Write-Once-Read-Many (WORM) så att de inte kan krypteras eller raderas", "Backuper som sparas utan lösenord", "Säkerhetskopior som skapas med öppen källkod"],
+      answer: 1,
+      exp: "Oföränderliga backuper kan varken modifieras eller raderas under en förutbestämd tid, vilket hindrar utpressningsvirus från att sabotera återställningsdata."
     },
     {
       topic: "sec",
-      q: "Vilken nätverkssårbarhet gör det möjligt för en angripare att styra om trafik genom falska MAC-adresskopplingar?",
-      options: ["ARP Poisoning / ARP Spoofing", "MAC Flooding", "DHCP Snooping", "VLAN Hopping"],
+      q: "Vilket serveroperativsystem dominerar idag storskalig virtualisering och molninfrastruktur tack vare KVM?",
+      options: ["MS-DOS", "Linux (med KVM-kärnmodul)", "macOS Server", "Windows 98"],
+      answer: 1,
+      exp: "Linux med KVM (Kernel-based Virtual Machine) förvandlar Linux-kärnan till en kraftfull Typ 1-hypervisor."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär 'live migration' (t.ex. VMware vMotion) i en virtuell serverinfrastruktur?",
+      options: ["Att flytta en igångvarande virtuell maskin mellan två fysiska värdar utan driftavbrott", "Att säkerhetskopiera till molnet via FTP", "Att uppgradera RAM utan att öppna chassit", "Att stänga av alla servrar samtidigt"],
       answer: 0,
-      exp: "ARP Poisoning lurar enheter på samma nätverk att koppla målets IP till angriparens egen MAC-adress."
+      exp: "Live migration flyttar det aktiva minnestillståndet och exekveringen av en virtuell maskin till en annan servernod utan att användarna tappar kontakten."
+    },
+    {
+      topic: "sec",
+      q: "Vad är ett 'Snapshot' i en virtualiseringsplattform, och varför ersätter det INTE en backup?",
+      options: ["Ett fotografi av serverchassit", "Ett tillfälligt tillstånd av disk och minne som är beroende av originaldisken och försämrar prestanda över tid", "En krypteringsmetod för brandväggar", "En hårdvarukontrollant"],
+      answer: 1,
+      exp: "Snapshots är diff-filer beroende av baskopian; om den underliggande virtuella disken korrumperas eller raderas förloras även ögonblicksbilderna."
+    },
+    {
+      topic: "sec",
+      q: "Vad är 'VM Sprawl' och vilken säkerhetsrisk medför det?",
+      options: ["Att virtuella maskiner sprids okontrollerat och glöms bort utan patchning och övervakning", "Att fysiska servrar blir för varma", "Att skärmupplösningen ändras automatiskt", "Att nätverkskabeln lossnar"],
+      answer: 0,
+      exp: "VM Sprawl uppstår när virtuella servrar skapas enkelt men inte avvecklas eller underhålls, vilket ger sårbara och opatchade mål i nätet."
+    },
+    {
+      topic: "sec",
+      q: "Vilken säkerhetsfunktion i moderna CPU:er krävs för hårdvaruassisterad virtualisering (Intel VT-x / AMD-V)?",
+      options: ["Ring -1 eller Root Mode som separerar gästens privilegier från hypervisorns kontroll", "Dubbel klockfrekvens", "Inbyggd brandvägg i L2-cachen", "Mekanisk låsning av processorluckan"],
+      answer: 0,
+      exp: "Intel VT-x och AMD-V introducerar hårdvarustöd (Root och Non-Root operations) så att hypervisorn kan köra gäster säkert och med full isolering."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär 'Thin Provisioning' vid tilldelning av lagringskapacitet till virtuella maskiner?",
+      options: ["Att diskyta allokeras dynamiskt i takt med att data faktiskt skrivs", "Att hårddisken fysiskt görs tunnare", "Att disken raderas varje natt", "Att all disk tilldelas och låses omedelbart vid start"],
+      answer: 0,
+      exp: "Thin Provisioning sparar lagring genom att endast använda det fysiska utrymme som gästoperativsystemet faktiskt fyller med data."
+    },
+    {
+      topic: "sec",
+      q: "Vilket säkerhetshot uppstår om virtuella maskiner i olika säkerhetszoner delar samma virtuella switch (vSwitch) utan korrekt VLAN-taggning?",
+      options: ["VLAN Hopping och oavsiktligt trafikläckage mellan isolerade nätverk", "Servern stänger av sig omedelbart", "CPU-fläkten stannar", "Datakablarna brinner upp"],
+      answer: 0,
+      exp: "Felaktigt konfigurerade virtuella switchar kan leda till att paket läcker mellan otillåtna zoner eller att en gäst kan utföra VLAN Hopping."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär 'Side-Channel Attacks' (som t.ex. Spectre och Meltdown) i virtualiserade miljöer?",
+      options: ["Att en angripare bryter upp serverhallens sidodörr", "Att en virtuell maskin kan läsa data från hypervisorn eller andra gäster genom att analysera delad hårdvarucache och spekulativ exekvering", "Att man manipulerar nätverksswitchens portar", "Att man skickar massiv spam via e-post"],
+      answer: 1,
+      exp: "Dessa hårdvarusårbarheter utnyttjar delade processorkomponenter för att läcka hemligheter (som krypteringsnycklar) mellan virtuella miljöer."
+    },
+    {
+      topic: "sec",
+      q: "Vad är syftet med 'Clustering' och delad lagring (SAN/NAS) i en modern serverinfrastruktur?",
+      options: ["Att eliminera 'Single Point of Failure' och tillåta omedelbar redundans om en servernod havererar", "Att minska elkostnaden till noll", "Att undvika behovet av lösenord", "Att göra hårddiskarna analoga"],
+      answer: 0,
+      exp: "Serverkluster med delad lagring ser till att om en hårdvarunod kraschar startas maskinerna automatiskt upp på en annan nod i klustret."
+    },
+    {
+      topic: "sec",
+      q: "Vad innebär principen 'Infrastructure as Code' (IaC) ur ett säkerhetsperspektiv?",
+      options: ["Att serverinfrastruktur definieras och versionshanteras i kodfiler, vilket ger repeterbara, granskningsbara och säkra driftsättningar", "Att IT-tekniker skriver hårdvaruritningar för hand", "Att servern endast kan konfigureras via BIOS", "Att kryptera all datakällkod"],
+      answer: 0,
+      exp: "IaC gör att servrar och nätverkskonfigurationer kan säkerhetsgranskas, automatiseras och snabbt återskapas felfritt vid haverier."
     }
   ];
 
@@ -463,6 +468,7 @@
       pool = questionPool.filter(item => item.topic === selectedTopic);
     }
 
+    // Slumpa och välj det begärda antalet
     activeQuestions = [...pool].sort(() => 0.5 - Math.random()).slice(0, requestedCount);
     currentIndex = 0;
     score = 0;
