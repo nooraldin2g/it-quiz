@@ -656,7 +656,7 @@
     $('setup-card').classList.remove('hidden');
   }
 
-  // Fisher-Yates-slumpning för svarsalternativen
+  // Fisher-Yates-slumpning för svarsalternativen så rätt svar inte alltid ligger på samma plats
   function shuffleOptions(question) {
     const indices = question.options.map((_, i) => i);
     for (let i = indices.length - 1; i > 0; i--) {
@@ -676,7 +676,7 @@
   $('start-btn').onclick = () => {
     const requestedCount = parseInt($('count').value, 10);
 
-    // Slumpa frågorna och slumpa alternativen inuti varje fråga
+    // Slumpa frågorna och slumpa även alternativen inuti varje fråga
     activeQuestions = [...questionPool]
       .sort(() => 0.5 - Math.random())
       .slice(0, requestedCount)
